@@ -1,0 +1,27 @@
+<!-- Latest News -->
+<div class="row gray latest-news">
+  <div class="title">
+    <h3>{{title}}</h3>
+  </div>
+  <ngb-carousel class="carousel-list">
+    <ng-template ngbSlide class="carousel-item" *ngFor="let news of newsList">
+      <div class="image-wrapper">
+        <img [src]="news.imageUrl" alt="{{news.title}}">
+      </div>
+      <div class="content">
+        <div class="title">
+          {{news.title}}
+        </div>
+        <div class="date">
+          {{news.date}}
+        </div>
+        <div class="text">
+          {{news.content}}
+        </div>
+        <div class="button">
+          <button>{{news.buttonText}}</button>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

@@ -1,0 +1,17 @@
+<div class="stats-container">
+  <div class="card-list">
+    <div class="card" *ngFor="let figure of figures">
+      <div class="icon-figures">
+        <div class="icon">
+          <img src="{{figure.imageUrl}}" />
+        </div>
+        <div class="figures">
+          <h2>{{figure.total}}</h2>
+        </div>
+      </div>
+      <div class="text">
+        {{figure.description}}
+      </div>
+    </div>
+  </div>
+</div>

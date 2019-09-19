@@ -1,0 +1,27 @@
+.section {
+	padding: 4rem 0;
+
+	// .section_header
+	&_header {
+		text-transform: uppercase;
+
+		&-1 {
+			font-size: 3.5rem;
+			font-weight: 700;
+		}
+
+		&-2 {
+			font-size: 2.5rem;
+			font-weight: 600;
+		}
+
+		&-3 {
+			font-size: 1.5rem;
+			font-weight: 500;
+		}
+	}
+
+	.col_title {
+		font-size: 1.5rem;
+	}
+}

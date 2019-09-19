@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Yale University",
+    "imageUrl": "https://picsum.photos/300/200?random&t=1"
+  },
+  {
+    "id": 2,
+    "name": "John Hopkings University",
+    "imageUrl": "https://picsum.photos/300/200?random&t=2"
+  },
+  {
+    "id": 3,
+    "name": "Columbia University",
+    "imageUrl": "https://picsum.photos/300/200?random&t=3"
+  },
+  {
+    "id": 4,
+    "name": "Vander University",
+    "imageUrl": "https://picsum.photos/300/200?random&t=4"
+  },
+  {
+    "id": 5,
+    "name": "Mayo Clinic University",
+    "imageUrl": "https://picsum.photos/300/200?random&t=5"
+  },
+  {
+    "id": 6,
+    "name": "University 1",
+    "imageUrl": "https://picsum.photos/300/200?random&t=6"
+  },
+  {
+    "id": 7,
+    "name": "University 2",
+    "imageUrl": "https://picsum.photos/300/200?random&t=7"
+  },
+  {
+    "id": 8,
+    "name": "University 3",
+    "imageUrl": "https://picsum.photos/300/200?random&t=8"
+  },
+  {
+    "id": 9,
+    "name": "University 4",
+    "imageUrl": "https://picsum.photos/300/200?random&t=9"
+  },
+  {
+    "id": 10,
+    "name": "University 5",
+    "imageUrl": "https://picsum.photos/300/200?random&t=10"
+  }
+]

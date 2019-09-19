@@ -1,0 +1,28 @@
+<div class="register-form">
+  <div class="row-item texts">
+    <div class="title">
+      <h4>{{title}}</h4>
+    </div>
+    <div class="description" *ngIf="subtitle">
+      {{subtitle}}
+    </div>
+  </div>
+  <form class="row-item form" (ngSubmit)="handleSubmit($event, name.value, email.value, institution.value, contact_person.value, contact_number.value)">
+    <div class="form-row">
+      <input #name type="text" placeholder="Name*" required>
+    </div>
+    <div class="form-row">
+      <input #email type="text" placeholder="Email*" required>
+      <input #institution type="text" placeholder="Institution">
+    </div>
+    <div class="form-row">
+      <input #contact_person type="text" placeholder="Contact person*" required>
+      <input #contact_number type="text" placeholder="Mobile">
+    </div>
+    <div class="form-row">
+      <button type="submit">
+        {{buttonText}}
+      </button>
+    </div>
+  </form>
+</div>

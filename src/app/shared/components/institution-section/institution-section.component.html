@@ -1,0 +1,29 @@
+
+<!-- Nurse Practitioners, ... Institutions -->
+<section class="institutionSection section">
+  <div class="container fluid fluidAdj-2-cols">
+    <div class="row">
+      <div 
+        class="col col-sm-6 col-center" 
+        *ngFor="let institution of institutions"
+      >
+        <div class="colWrapper">
+          <h1 class="col_title">{{institution.title}}</h1>
+          <p class="col_description"> {{institution.subtitle}} </p>
+          <div class="col_img">
+            <img src="{{institution.imageUrl}}" />
+          </div>
+          <div class="col_action">
+            <button
+              mat-button
+              class="ncBttn ncBttn-secondary"
+            >
+              {{institution.buttonText}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

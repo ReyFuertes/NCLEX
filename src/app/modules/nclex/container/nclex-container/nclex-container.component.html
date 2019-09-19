@@ -1,0 +1,26 @@
+ 
+<div class="page-nclex">
+  <!-- Hero with Image -->
+  <app-hero-section [hero]="hero">
+  </app-hero-section>
+
+  <!-- Students -->
+	<app-university-carousel [universities]="universities">
+  </app-university-carousel>
+  
+  <!-- The first step to ... exam day -->
+  <app-preparation-section [title]="preparationTitle" [imageUrl]="preparationImageUrl" [preparations]="preparations">
+  </app-preparation-section>
+
+  <!-- Having great questions ... way of study -->
+  <app-improvement-section [title]="improvementTitle" [subtitle]="improvementSubtitle" [improvements]="improvements">
+  </app-improvement-section>
+
+  <!-- An innovative ... for the NCLEX-RN -->
+  <app-innovation-section [title]="innovationTitle" [subtitle]="innovationSubtitle" [imageUrl]="innovationImageUrl" [innovations]="innovations">
+  </app-innovation-section>
+
+  <!-- Every Day, More Nursing... - Testimonials -->
+	<app-testimonial-section [title]="testimonialTitle" [testimonials]="testimonials">
+	</app-testimonial-section>
+</div>

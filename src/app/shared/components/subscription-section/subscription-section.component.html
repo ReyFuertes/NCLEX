@@ -1,0 +1,14 @@
+<!-- Subscribe to our Newletters -->
+<div class="subscribe-form">
+  <div class="title">
+    <h4>{{title}}</h4>
+  </div>
+  <form class="form" (ngSubmit)="handleSubmit($event, email.value)">
+    <div class="form-row">
+      <input #email type="text" placeholder="Enter email address here..." required>
+    </div>
+    <div class="form-row">
+      <button>Subscribe</button>
+    </div>
+  </form>
+</div>

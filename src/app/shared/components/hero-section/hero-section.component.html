@@ -1,0 +1,20 @@
+<section 
+  class="heroSection section"
+  [ngStyle]="{'background-image': 'url('+hero.imageUrl+')'}"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-content">
+        <h1 class="section_header section_header-1">{{hero.title}}</h1>
+        <h2 class="section_header section_header-3">{{hero.subtitle}}</h2>
+        <button 
+          mat-button
+          class="ncBttn ncBttn-primary"
+          *ngIf="hero.showButton"
+        >
+          {{hero.buttonText}}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

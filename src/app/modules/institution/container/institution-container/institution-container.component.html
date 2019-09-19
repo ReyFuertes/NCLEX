@@ -1,0 +1,31 @@
+<div class="page-institution">
+  <!-- Hero with Image -->
+	<app-hero-section [hero]="hero">
+  </app-hero-section>
+  
+  <!-- Students -->
+	<app-university-carousel [universities]="universities">
+  </app-university-carousel>
+  
+  <!-- Having great questions ... way of study -->
+  <app-work-section [title]="workTitle" [subtitle]="workSubtitle" [works]="works">
+  </app-work-section>
+
+  <!-- NCLEX ExpertAcademy ... and Faculty -->
+  <div class="row benefits-registration">
+    <app-benefit-section [title]="benefitTitle" [checkIconUrl]="benefitCheckIconUrl" [benefits]="benefits">
+    </app-benefit-section>
+
+    <!-- Let's Talk -->
+    <app-registration-section [title]="registrationTitle" [buttonText]="registrationButtonText" (onSubmitForm)="handleSubmitRegistrationForm($event)">
+    </app-registration-section>
+  </div>
+
+  <!-- Help your students ... your program -->
+  <app-goal-section [title]="goalTitle" [avatarUrl]="goalAvatarUrl" [checkIconUrl]="goalCheckIconUrl" [goals]="goals">
+  </app-goal-section>
+
+  <!-- Subscribe to our Newletters -->
+	<app-subscription-section [title]="subscriptionTitle" (onSubmitForm)="handleSubmitSubscriptionForm($event)">
+	</app-subscription-section>
+</div>

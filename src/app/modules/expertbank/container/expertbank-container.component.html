@@ -1,0 +1,22 @@
+<!-- Hero with Image -->
+<app-hero-section [hero]="hero">
+</app-hero-section>
+
+<!-- What makes ExpertBanks... rest? -->
+<app-advantages-section [title]="advantageTitle" [advantages]="advantages">
+</app-advantages-section>
+
+<!-- Out content ... NCLEX-RN -->
+<app-features-section [title]="featureTitle" [features]="features">
+</app-features-section>
+
+<!-- Our exam ... peers -->
+<app-performance-section [performance]="performance">
+</app-performance-section>
+
+<!-- Improve ... (has forms) - Registration Form -->
+<app-registration-section [title]="registrationTitle" [subtitle]="registrationSubtitle" (onSubmitForm)="handleSubmitRegistrationForm($event)">
+</app-registration-section>
+
+<app-practice-section [title]="practiceTitle" (onClickPractice)="handleClickPractice()">
+</app-practice-section>

@@ -1,0 +1,15 @@
+<!-- Checkout Our ... Samples-->
+<div class="row checkout-samples">
+  <div class="title">
+    <h3>{{title}}</h3>
+  </div>
+  <div class="image-list">
+    <div class="image-wrapper" *ngFor="let elearning of elearnings">
+      <img src="{{elearning.imageUrl}}" />
+    </div>
+  </div>
+
+  <div class="action-button">
+    <button>{{buttonText}}</button>
+  </div>
+</div>

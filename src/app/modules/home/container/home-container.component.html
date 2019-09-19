@@ -1,0 +1,46 @@
+<!-- container of your apps here / router outlet -->
+<div class="page-home">
+	<!-- Hero with Image -->
+	<app-hero-section [hero]="hero">
+	</app-hero-section>
+
+	<!-- Students -->
+	<app-university-carousel [universities]="universities">
+	</app-university-carousel>
+
+	<!-- Nurse Practitioners, ... Institutions -->
+	<app-institution-section [institutions]="institutions">
+	</app-institution-section>
+
+	<!-- Our Accreditation -->
+	<app-accreditation-section [title]="accreditationTitle" [accreditations]="accreditations">
+	</app-accreditation-section>
+
+	<!-- ExpertBanks -->
+	<app-expertbank-section [title]="exportbankTitle" [buttonText]="expertbankButtonText" [expertbanks]="expertbanks">
+	</app-expertbank-section>
+
+	<!-- Figures - 1.5M -->
+	<app-figure-section [figures]="figures">
+	</app-figure-section>
+
+	<!-- Checkout Our ... Samples-->
+	<app-elearning-section [title]="elearningTitle" [buttonText]="elearningButtonText" [elearnings]="elearnings">
+	</app-elearning-section>
+
+	<!-- Latest News -->
+	<app-news-section [title]="newsTitle" [newsList]="newsList">
+	</app-news-section>
+
+	<!-- Improve ... (has forms) - Registration Form -->
+	<app-registration-section [title]="registrationTitle" [subtitle]="registrationSubtitle" (onSubmitForm)="handleSubmitRegistrationForm($event)">
+	</app-registration-section>
+
+	<!-- Every Day, More Nursing... - Testimonials -->
+	<app-testimonial-section [title]="testimonialTitle" [testimonials]="testimonials">
+	</app-testimonial-section>
+
+	<!-- Subscribe to our Newletters -->
+	<app-subscription-section [title]="subscriptionTitle" (onSubmitForm)="handleSubmitSubscriptionForm($event)">
+	</app-subscription-section>
+</div>

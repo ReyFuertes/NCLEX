@@ -1,0 +1,52 @@
+@import './src/styleguide/utils/index';
+
+
+.universitiesSection .row-header {
+	margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   carousel
+   ========================================================================== */
+.universitiesSection .univCarousel {
+	width: 100%;
+	outline: none !important;
+
+	// .univCarousel_item
+	&_item {
+		width: percentage(1/5);
+	}
+
+	// .univCarousel_item_imgWrapper
+	&_imgWrapper {
+		width: 100%;
+	}
+
+	&_img {
+		width: 100%;
+	}
+
+	.carousel-item {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.carousel-indicators {
+		bottom: auto;
+		top: 100%;
+
+		[id*='ngb-slide'] {
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: $default;
+			opacity: 1 !important;
+
+			&.active {
+				background-color: $secondary-color;
+			}
+		}
+	}
+}
