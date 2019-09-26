@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FooterNavigationComponent implements OnInit {
   logoLink = "/"
   logoTitle = "Expert Academy Logo"
-  logoUrl = "https://picsum.photos/200/75?app-logo"
+  logoUrl = "./assets/images/global/footer_logo.png"
 
   appLink = "/"
   appTitle = "Expert Academy"
@@ -23,19 +23,19 @@ export class FooterNavigationComponent implements OnInit {
       id: "1",
       link: "https://www.facebook.com",
       title: "Facebook",
-      imageUrl: "https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-128.png"
+      icon: 'facebook-f'
     },
     {
       id: "2",
       link: "https://www.twitter.com",
       title: "Twitter",
-      imageUrl: "https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-128.png"
+      icon: 'twitter'
     },
     {
       id: "3",
       link: "https://www.linkedin.com",
       title: "LinkedIn",
-      imageUrl: "https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/linkedin_circle-128.png"
+      icon: 'linkedin-in'
     }
   ]
 

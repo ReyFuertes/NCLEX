@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanService } from '../../services/plan.service';
-import { PlanModel } from '../../models/plan.model';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-pricing-container',
@@ -8,26 +7,11 @@ import { PlanModel } from '../../models/plan.model';
   styleUrls: ['./pricing-container.component.scss']
 })
 export class PricingContainerComponent implements OnInit {
-  planTitle: string
-  planSubtitle: string
-  planButtonText: string
-  planCheckIconUrl: string
-  plans: PlanModel[]
-
-  constructor(
-    private planService$: PlanService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getPlans()
+    AOS.init({
+      duration: 1200,
+    });
   }
-
-  getPlans(): void {
-    this.planTitle = this.planService$.getTitle()
-    this.planSubtitle = this.planService$.getSubtitle()
-    this.planButtonText = this.planService$.getButtonText()
-    this.planCheckIconUrl = this.planService$.getCheckIconUrl()
-    this.plans = this.planService$.getPlans()
-  }
-
 }

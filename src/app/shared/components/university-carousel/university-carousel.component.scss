@@ -15,6 +15,7 @@
 	// .univCarousel_item
 	&_item {
 		width: percentage(1/5);
+		display: inline-block;
 	}
 
 	// .univCarousel_item_imgWrapper
@@ -24,29 +25,5 @@
 
 	&_img {
 		width: 100%;
-	}
-
-	.carousel-item {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.carousel-indicators {
-		bottom: auto;
-		top: 100%;
-
-		[id*='ngb-slide'] {
-			width: 5px;
-			height: 5px;
-			border-radius: 50%;
-			background-color: $default;
-			opacity: 1 !important;
-
-			&.active {
-				background-color: $secondary-color;
-			}
-		}
 	}
 }

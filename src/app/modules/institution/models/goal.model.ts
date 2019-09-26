@@ -8,3 +8,15 @@ export interface GoalList {
   id: string,
   description: string
 }
+
+export interface GoalPropertyModel {
+  title: string,
+  checkIconUrl: string,
+  avatarUrl: string
+}
+
+export interface GoalPropertyFetchingModel {
+  title: boolean,
+  checkIconUrl: boolean,
+  avatarUrl: boolean
+}

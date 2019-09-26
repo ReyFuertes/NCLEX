@@ -3,25 +3,20 @@
 
 	// .section_header
 	&_header {
-		text-transform: uppercase;
 
 		&-1 {
 			font-size: 3.5rem;
-			font-weight: 700;
+			font-weight: bold;
 		}
 
 		&-2 {
 			font-size: 2.5rem;
-			font-weight: 600;
+			font-weight: bold;
 		}
 
 		&-3 {
-			font-size: 1.5rem;
-			font-weight: 500;
+			font-size: 1.75rem;
+			font-weight: bold;
 		}
-	}
-
-	.col_title {
-		font-size: 1.5rem;
 	}
 }

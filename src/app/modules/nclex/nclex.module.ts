@@ -11,6 +11,9 @@ import { ImprovementSectionComponent } from './components/improvement-section/im
 import { ImprovementService } from './services/improvement.service';
 import { InnovationSectionComponent } from './components/innovation-section/innovation-section.component';
 import { InnovationService } from './services/innovation.service';
+import { ImprovementSectionContainerComponent } from './container/improvement-section-container/improvement-section-container.component';
+import { InnovationSectionContainerComponent } from './container/innovation-section-container/innovation-section-container.component';
+import { PreparationSectionContainerComponent } from './container/preparation-section-container/preparation-section-container.component';
 
 /**
  * Define your third party libs
@@ -31,7 +34,10 @@ const routes: Routes = [
     NclexContainerComponent,
     PreparationSectionComponent,
     ImprovementSectionComponent,
-    InnovationSectionComponent
+    InnovationSectionComponent,
+    ImprovementSectionContainerComponent,
+    InnovationSectionContainerComponent,
+    PreparationSectionContainerComponent
   ],
   imports: [
     CommonModule,

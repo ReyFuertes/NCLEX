@@ -1,27 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ElearningModel } from '../models/elearning.model';
+import { BaseService } from './base.service';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class ElearningService {
-  private title$: string = "CHECK OUT OUR ELEARNING SAMPLES"
-  private buttonText$: string = "SHOW MORE"
-  private elearnings$: ElearningModel[] = new Array(8).fill(true).map((e, i) => ({
-    id: "1",
-    imageUrl: `https://picsum.photos/400/300?${i}`
-  }))
+export class ElearningService extends BaseService {
+  private url = '/assets/data/elearnings.json'
+  private propertyUrl = '/assets/data/elearning.json'
 
-  constructor() { }
-
-  getTitle(): string {
-    return this.title$
+  getElearnings() {
+    return this.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  getButtonText(): string {
-    return this.buttonText$
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  getElearnings(): ElearningModel[] {
-    return this.elearnings$
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
-
 }

@@ -1,13 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewEncapsulation  } from '@angular/core';
 import { TestimonialModel } from 'src/app/models/testimonial.model';
 import chunk from 'lodash/chunk'
 
 @Component({
   selector: 'app-testimonial-section',
   templateUrl: './testimonial-section.component.html',
-  styleUrls: ['./testimonial-section.component.scss']
+  styleUrls: ['./testimonial-section.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class TestimonialSectionComponent implements OnInit {
+export class TestimonialSectionComponent implements OnInit, OnChanges {
   @Input() title: string
   @Input() testimonials: TestimonialModel[]
 
@@ -18,7 +19,12 @@ export class TestimonialSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.slides = chunk(this.testimonials, this.itemPerSlide$)
+  }
+
+  ngOnChanges(changes) {
+    if (changes.testimonials) {
+      this.slides = chunk(changes.testimonials.currentValue, this.itemPerSlide$)
+    }
   }
 
 }

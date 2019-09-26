@@ -4,3 +4,11 @@ export interface AdvantageModel {
   description: string,
   imageUrl: string
 }
+
+export interface AdvantagePropertyModel {
+  title: string
+}
+
+export interface AdvantagePropertyFetchingModel {
+  title: boolean
+}

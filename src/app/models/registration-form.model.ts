@@ -5,3 +5,15 @@ export interface RegistrationFormModel {
   contactPerson: string,
   contactNumber: string
 }
+
+export interface RegistrationPropertyModel {
+  title: string,
+  subtitle: string,
+  buttonText: string
+}
+
+export interface RegistrationPropertyFetchingModel {
+  title: boolean,
+  subtitle: boolean,
+  buttonText: boolean
+}

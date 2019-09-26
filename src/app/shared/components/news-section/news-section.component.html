@@ -1,27 +1,41 @@
 <!-- Latest News -->
-<div class="row gray latest-news">
-  <div class="title">
-    <h3>{{title}}</h3>
+<section class="section newsSection">
+  <div class="container">
+    <div class="row row-header">
+      <h4 class="section_header section_header-2">{{title}}</h4>
+    </div>
+    <div class="row">
+      <ngb-carousel class="newsCarousel">
+        <ng-template ngbSlide *ngFor="let news of newsList">
+          <div class="newsCarousel_item">
+            <div class="newsCarousel_item_img">
+              <img 
+                [src]="news.imageUrl"
+                alt="{{news.title}}"
+              />
+            </div>
+            <div class="newsCarousel_item_content">
+              <h1 class="content_title">
+                {{news.title}}
+              </h1>
+              <p class="content_date">
+                {{news.date}}
+              </p>
+              <p class="content_desc">
+                {{news.content}}
+              </p>
+              <div class="content_actions">
+                <button
+                  mat-button
+                  class="ncBttn ncBttn-primary" 
+                >
+                  {{news.buttonText}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
   </div>
-  <ngb-carousel class="carousel-list">
-    <ng-template ngbSlide class="carousel-item" *ngFor="let news of newsList">
-      <div class="image-wrapper">
-        <img [src]="news.imageUrl" alt="{{news.title}}">
-      </div>
-      <div class="content">
-        <div class="title">
-          {{news.title}}
-        </div>
-        <div class="date">
-          {{news.date}}
-        </div>
-        <div class="text">
-          {{news.content}}
-        </div>
-        <div class="button">
-          <button>{{news.buttonText}}</button>
-        </div>
-      </div>
-    </ng-template>
-  </ngb-carousel>
-</div>
+</section>

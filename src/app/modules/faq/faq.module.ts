@@ -4,10 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
-import { FaqContainerComponent } from './container/faq-container.component';
+import { FaqContainerComponent } from './container/faq-container/faq-container.component';
 import { FaqService } from './services/faq.service';
 import { FaqSectionComponent } from './components/faq-section/faq-section.component';
 import { FaqItemComponent } from './components/faq-item/faq-item.component';
+import { FaqSectionContainerComponent } from './container/faq-section-container/faq-section-container.component';
 
 /**
  * Define your third party libs
@@ -27,7 +28,8 @@ const routes: Routes = [
   declarations: [
     FaqContainerComponent,
     FaqSectionComponent,
-    FaqItemComponent
+    FaqItemComponent,
+    FaqSectionContainerComponent
   ],
   imports: [
     CommonModule,

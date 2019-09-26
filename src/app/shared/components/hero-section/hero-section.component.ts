@@ -4,7 +4,9 @@ import { HeroModel } from 'src/app/models/hero.model';
 @Component({
   selector: 'app-hero-section',
   templateUrl: './hero-section.component.html',
-  styleUrls: ['./hero-section.component.scss']
+  styleUrls: [
+    './hero-section.component.scss'
+  ]
 })
 export class HeroSectionComponent implements OnInit {
   @Input() readonly hero: HeroModel
@@ -12,6 +14,6 @@ export class HeroSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ExpertbankModel } from 'src/app/models/expertbank.model';
 
 @Component({
@@ -10,10 +10,14 @@ export class ExpertbankSectionComponent implements OnInit {
   @Input() title: string
   @Input() buttonText: string
   @Input() expertbanks: ExpertbankModel[]
+  @Output() onButtonClick = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  handleClick() {
+    this.onButtonClick.emit()
+  }
 }

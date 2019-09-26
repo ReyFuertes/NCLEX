@@ -1,23 +1,31 @@
 import { Injectable } from '@angular/core';
+import { BaseService } from './base.service';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { RegistrationFormModel } from '../models/registration-form.model';
 
 @Injectable()
-export class RegistrationService {
-  private title$: string = "IMPROVE NCLEX-RN SCORES AT YOUR ORGANIZATION BY PARTNERING WITH NCLEX EXPERTACADEMY."
-  private subtitle$: string = "It doesn't matter whether you are taking the NCLEX-RN for the first time, if you are repeating it, or if your are an international student. NCLEX ExpertAcademy can adapt to your requirements."
+export class RegistrationService extends BaseService {
+  private propertyUrl = '/assets/data/registration.json'
+  private registerFormUrl = '/api/register'
 
-  constructor() { }
-  
-  getTitle(): string {
-    return this.title$
+  getProperty(property: string, page: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[page][property]),
+        catchError(this.handleError)
+      )
   }
 
-  getSubtitle(): string {
-    return this.subtitle$
+  submitRegistrationForm(formData: RegistrationFormModel) {
+    console.log('@TODO: Implement API:', JSON.stringify(formData, null, 2))
+    return this.post(this.registerFormUrl, formData)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  submitForm(formData: RegistrationFormModel): void {
-    alert(JSON.stringify(formData, null, 2))
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
-
 }

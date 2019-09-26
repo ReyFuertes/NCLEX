@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BaseService } from 'src/app/services/base.service';
 
-@Injectable()
-export class PracticeService {
-  private title$: string = "ExpertAcademy allows you to simulate the environment that you will experience on the day of your NCLEX-RN. This can help predict how you will perform under similar conditions. Our realistic test experience provides an accurate representation of the test you have to take."
+@Injectable({
+  providedIn: 'root'
+})
+export class PracticeService extends BaseService {
+  private propertyUrl = '/assets/data/practice.json'
 
-  constructor() { }
-
-  getTitle(): string {
-    return this.title$
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  clickPractice(): void {
-    alert('/pricing')
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
-
 }

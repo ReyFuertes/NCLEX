@@ -1,25 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HeroModel } from '../models/hero.model';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { BaseService } from 'src/app/services/base.service';
 
 @Injectable()
-export class HeroService {
+export class HeroService extends BaseService {
 
-  private hero$: HeroModel = {
-    id: "1",
-    title: "Test NCLEX-RN better",
-    subtitle: "A new, evidence-based perspective on NCLEX-RN preparation",
-    buttonText: "Get started for free!",
-    imageUrl: "./assets/images/home/hero_section.png",
-    showButton: true
+  private url = '/assets/data/heroes.json'
+
+  getHero(page: string) {
+    return this.get(this.url)
+      .pipe(
+        map(heroes => heroes[page]),
+        catchError(this.handleError)
+      )
   }
 
-  constructor() {
-  }
-
-  getHero(page: string): HeroModel {
-    return {
-      ...this.hero$,
-      imageUrl: `${this.hero$.imageUrl}?${page}`
-    }
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
 }

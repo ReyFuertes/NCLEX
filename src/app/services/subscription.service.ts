@@ -1,18 +1,31 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { BaseService } from './base.service';
 import { SubscriptionFormModel } from '../models/subscription-form.model';
 
 @Injectable()
-export class SubscriptionService {
-  private title$: string = "SUBSCRIBE TO OUR NEWSLETTERS TO GET UPDATES!"
+export class SubscriptionService extends BaseService {
+  private propertyUrl = '/assets/data/subscription.json'
+  private registerFormUrl = '/api/register'
 
-  constructor() { }
-  
-  getTitle(): string {
-    return this.title$
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  submitForm(formData: SubscriptionFormModel): void {
-    alert(JSON.stringify(formData, null, 2))
+  submitSubscriptionForm(formData: SubscriptionFormModel) {
+    console.log('@TODO: Implement API:', JSON.stringify(formData, null, 2))
+    return this.post(this.registerFormUrl, formData)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
+  constructor(private _http: HttpClient) {
+    super(_http)
+  }
 }

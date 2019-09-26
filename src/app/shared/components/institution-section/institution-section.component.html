@@ -7,13 +7,41 @@
         class="col col-sm-6 col-center" 
         *ngFor="let institution of institutions"
       >
-        <div class="colWrapper">
-          <h1 class="col_title">{{institution.title}}</h1>
-          <p class="col_description"> {{institution.subtitle}} </p>
-          <div class="col_img">
+        <div 
+          class="colWrapper"
+          data-aos="fade-in"
+          data-aos-anchor-placement="top"
+        >
+          <h1 
+            class="col_title"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-anchor-placement="top"
+          >
+            {{institution.title}}
+          </h1>
+          <p 
+            class="col_description"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-anchor-placement="top"
+          >
+            {{institution.subtitle}}
+          </p>
+          <div
+            class="col_img"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            data-aos-anchor-placement="top"
+          >
             <img src="{{institution.imageUrl}}" />
           </div>
-          <div class="col_action">
+          <div
+            class="col_action"
+            data-aos="fade-up"
+            data-aos-delay="800"
+            data-aos-anchor-placement="top"
+          >
             <button
               mat-button
               class="ncBttn ncBttn-secondary"

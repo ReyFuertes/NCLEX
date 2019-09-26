@@ -13,6 +13,9 @@ import { BenefitSectionComponent } from './components/benefit-section/benefit-se
 import { BenefitService } from './services/benefit.service';
 import { GoalSectionComponent } from './components/goal-section/goal-section.component';
 import { GoalService } from './services/goal.service';
+import { BenefitSectionContainerComponent } from './container/benefit-section-container/benefit-section-container.component';
+import { GoalSectionContainerComponent } from './container/goal-section-container/goal-section-container.component';
+import { WorkSectionContainerComponent } from './container/work-section-container/work-section-container.component';
 
 /**
  * Define your third party libs
@@ -33,7 +36,10 @@ const routes: Routes = [
     InstitutionContainerComponent,
     WorkSectionComponent,
     BenefitSectionComponent,
-    GoalSectionComponent
+    GoalSectionComponent,
+    BenefitSectionContainerComponent,
+    GoalSectionContainerComponent,
+    WorkSectionContainerComponent
   ],
   imports: [
     CommonModule,

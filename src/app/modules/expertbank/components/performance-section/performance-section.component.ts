@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PerformanceModel } from '../../models/performance.model';
 
 @Component({
   selector: 'app-performance-section',
@@ -7,7 +6,10 @@ import { PerformanceModel } from '../../models/performance.model';
   styleUrls: ['./performance-section.component.scss']
 })
 export class PerformanceSectionComponent implements OnInit {
-  @Input() performance: PerformanceModel
+  @Input() imageUrlBack: string
+  @Input() imageUrlFront: string
+  @Input() title: string
+  @Input() description: string
 
   constructor() { }
 

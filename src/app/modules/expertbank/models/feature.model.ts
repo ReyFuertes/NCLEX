@@ -4,3 +4,11 @@ export interface FeatureModel {
   description: string,
   imageUrl: string
 }
+
+export interface FeaturePropertyModel {
+  title: string
+}
+
+export interface FeaturePropertyFetchingModel {
+  title: boolean
+}

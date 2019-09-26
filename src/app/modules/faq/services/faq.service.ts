@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-import { FaqModel } from '../models/faq.model';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BaseService } from 'src/app/services/base.service';
 
-@Injectable()
-export class FaqService {
-  private faqs$: FaqModel[] = []
+@Injectable({
+  providedIn: 'root'
+})
+export class FaqService extends BaseService {
+  private url = '/assets/data/faqs.json'
 
-  constructor() {
-    const categories = ['NCLEX-RN', 'Technical Questions', 'Using Your Subscription', 'Purchase and Refunds', 'Subscription Activation and Renewal']
-    const generateMockCategories = categories.reduce(
-      (list, currentCategory) => [
-        ...list,
-        ...(new Array(5).fill(true).map((e, index) => ({
-          id: index,
-          question: "Where does it come from Lorem Ipsum is not simply random text ?",
-          answer: "I don't know",
-          category: currentCategory
-        })))
-      ], [])
-    this.faqs$ = generateMockCategories
+  getFaqs() {
+    return this.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  getFaqs(): FaqModel[] {
-    return this.faqs$
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
 }
+

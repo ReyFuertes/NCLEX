@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-navigation.component.scss']
 })
 export class HeaderNavigationComponent implements OnInit {
+  showLogin = false
   readonly links = [
     {
       value: '/about',
@@ -53,7 +54,7 @@ export class HeaderNavigationComponent implements OnInit {
   }
 
   onClickLogin() {
-    alert('@onClick Login')
+    this.showLogin = !this.showLogin
   }
 
   onClickSignup() {

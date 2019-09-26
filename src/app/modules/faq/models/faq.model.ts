@@ -5,7 +5,6 @@ export interface FaqModel {
   category: string
 }
 
-
 export interface FaqGroupedByCategoryModel {
   [key: string]: FaqModel[]
 }

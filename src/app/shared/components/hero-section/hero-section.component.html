@@ -1,13 +1,30 @@
 <section 
+  *ngIf="hero"
   class="heroSection section"
   [ngStyle]="{'background-image': 'url('+hero.imageUrl+')'}"
 >
   <div class="container">
     <div class="row">
       <div class="col-content">
-        <h1 class="section_header section_header-1">{{hero.title}}</h1>
-        <h2 class="section_header section_header-3">{{hero.subtitle}}</h2>
+        <h1 
+          class="section_header section_header-1"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top"
+        >
+          {{hero.title}}
+        </h1>
+        <h2
+          class="section_header section_header-3"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-anchor-placement="top"
+        >
+          {{hero.subtitle}}
+        </h2>
         <button 
+          data-aos="fade-up"
+          data-aos-delay="150"
+          data-aos-anchor-placement="top"
           mat-button
           class="ncBttn ncBttn-primary"
           *ngIf="hero.showButton"

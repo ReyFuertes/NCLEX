@@ -1,50 +1,31 @@
 import { Injectable } from '@angular/core';
-import { InnovationModel } from '../models/innovation.model';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BaseService } from 'src/app/services/base.service';
 
-@Injectable()
-export class InnovationService {
-  private title: string = "AN INNOVATIVE LEARNING PLATFORM FOR THE NCLEX-RN"
-  private subtitle: string = "OUR EXAMS CAN BE ADAPTIVE TO YOUR NEEDS SO THAT YOU CAN FOCUS ON YOUR WEAKEST SUBJECTS. THIS WAY, YOUR STUDY TIME WILL BE MORE EFFECTIVE THAN EVER!"
-  private imageUrl: string = "https://picsum.photos/500?4"
-  private innovations: InnovationModel[] = [
-    {
-      id: "1",
-      title: "Customized exams"
-    },
-    {
-      id: "2",
-      title: "Exam style items"
-    },
-    {
-      id: "3",
-      title: "Realistic exam experience"
-    },
-    {
-      id: "4",
-      title: "Detailed explanations"
-    },
-    {
-      id: "5",
-      title: "Mobile interface"
-    }
-  ]
+@Injectable({
+  providedIn: 'root'
+})
+export class InnovationService extends BaseService {
+  private url = '/assets/data/innovations.json'
+  private propertyUrl = '/assets/data/innovation.json'
 
-  constructor() { }
-
-  getTitle(): string {
-    return this.title
+  getInnovations() {
+    return this.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  getSubtitle(): string {
-    return this.subtitle
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  getImageUrl(): string {
-    return this.imageUrl
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
-
-  getInnovations(): InnovationModel [] {
-    return this.innovations
-  }
-
 }

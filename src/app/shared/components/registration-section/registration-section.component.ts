@@ -9,7 +9,7 @@ import { RegistrationFormModel } from 'src/app/models/registration-form.model';
 export class RegistrationSectionComponent implements OnInit {
   @Input() title: string
   @Input() subtitle: string
-  @Input() buttonText: string = "Submit"
+  @Input() buttonText: string
   @Output() onSubmitForm = new EventEmitter()
 
   formData: RegistrationFormModel

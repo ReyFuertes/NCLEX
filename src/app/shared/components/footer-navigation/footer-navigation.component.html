@@ -1,46 +1,46 @@
 <footer>
-  <div class="container footer">
-    <div class="footer-content">
-      <!-- App Logo and Social Media Accounts -->
-      <div class="app-social-media">
-          <div class="app-info">
-            <div class="logo">
-              <a routerLink="{{logoLink}}" title="{{logoTitle}}">
-                <img src="{{logoUrl}}" alt="app logo" />
-              </a>
-            </div>
-            <div class="link">
-              <a routerLink="{{appLink}}" title="{{appTitle}}">{{appLabel}}</a>
-            </div>
+  <div class="row row-content">
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-4 col-info">
+          <div class="logo">
+            <a routerLink="{{logoLink}}" title="{{logoTitle}}">
+              <img src="{{logoUrl}}" alt="app logo" />
+            </a>
           </div>
-
-          <!-- Social Media -->
-          <div class="social-media-icons">
-            <div class="icon-item" *ngFor="let socialMedia of socialMedias">
+          <div class="link">
+            <a routerLink="{{appLink}}" title="{{appTitle}}">{{appLabel}}</a>
+          </div>
+          <div class="social">
+            <div 
+              class="social_item"
+              *ngFor="let socialMedia of socialMedias"
+            >
               <a href="{{socialMedia.link}}" title="{{socialMedia.title}}">
-                <img src="{{socialMedia.imageUrl}}" />
+                <i ngClass="wtfb wtf-{{socialMedia.icon}}"></i>
               </a>
             </div>
           </div>
         </div>
-      
-        <!-- Help and Links -->
-        <div class="help-links">
+        <div class="col col-md-offset-4 col-md-4 col-help">
           <div class="title">
             {{helpText}}
           </div>
-
-          <!-- Nav links -->
-          <div class="links">
-            <div class="link-item" *ngFor="let navlink of navlinks">
-              <a routerLink="{{navlink.link}}">{{navlink.title}}</a>
-            </div>
-          </div>
+          <ul class="help">
+            <li 
+              class="help_item"
+              *ngFor="let navlink of navlinks"
+            >
+              <a routerLink="{{navlink.link}}">
+                {{navlink.title}}
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
-  
-    <div class="footer-copyright">
-      <p>{{copyrightText}}</p>
-    </div>
+  </div>
+  <div class="row row-copyright">
+    <p>{{copyrightText}}</p>
   </div>
 </footer>

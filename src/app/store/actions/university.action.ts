@@ -1,18 +1,22 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { UniversityModel } from 'src/app/models/university.model';
 
 export enum UniversityActionTypes {
-  LoadUniversity = '[University] Load University',
-  LoadUniversitySuccess = '[University] Load University (success)'
+  LoadUniversityList = '[University] Load University List',
+  LoadUniversityListSuccess = '[University] Load University List (success)',
+  LoadUniversityListFailure = '[University] Load University List (failure)'
 }
 
-export class LoadUniversity implements Action {
-  readonly type = UniversityActionTypes.LoadUniversity;
-}
+export const LoadUniversityList = createAction(
+  UniversityActionTypes.LoadUniversityList
+)
 
-export class LoadUniversitySuccess implements Action {
-  readonly type = UniversityActionTypes.LoadUniversitySuccess;
+export const LoadUniversityListSuccess = createAction(
+  UniversityActionTypes.LoadUniversityListSuccess,
+  props<{ list: UniversityModel[] }>()
+)
 
-  constructor(public payload: any) { }
-}
-
-export type UniversityActions = LoadUniversity | LoadUniversitySuccess;
+export const LoadUniversityListFailure = createAction(
+  UniversityActionTypes.LoadUniversityListFailure,
+  props<{ error: any }>()
+)

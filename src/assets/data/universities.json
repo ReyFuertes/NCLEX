@@ -2,51 +2,51 @@
   {
     "id": 1,
     "name": "Yale University",
-    "imageUrl": "https://picsum.photos/300/200?random&t=1"
+    "imageUrl": "assets/images/global/universities/YaleU.png"
   },
   {
     "id": 2,
-    "name": "John Hopkings University",
-    "imageUrl": "https://picsum.photos/300/200?random&t=2"
+    "name": "John Hopkins University",
+    "imageUrl": "assets/images/global/universities/JohnHopkinsU.png"
   },
   {
     "id": 3,
     "name": "Columbia University",
-    "imageUrl": "https://picsum.photos/300/200?random&t=3"
+    "imageUrl": "assets/images/global/universities/ColumbiaU.png"
   },
   {
     "id": 4,
     "name": "Vander University",
-    "imageUrl": "https://picsum.photos/300/200?random&t=4"
+    "imageUrl": "assets/images/global/universities/VanderbiltU.png"
   },
   {
     "id": 5,
     "name": "Mayo Clinic University",
-    "imageUrl": "https://picsum.photos/300/200?random&t=5"
+    "imageUrl": "assets/images/global/universities/MayoU.png"
   },
   {
     "id": 6,
     "name": "University 1",
-    "imageUrl": "https://picsum.photos/300/200?random&t=6"
+    "imageUrl": "assets/images/global/universities/MayoU.png"
   },
   {
     "id": 7,
     "name": "University 2",
-    "imageUrl": "https://picsum.photos/300/200?random&t=7"
+    "imageUrl": "assets/images/global/universities/VanderbiltU.png"
   },
   {
     "id": 8,
     "name": "University 3",
-    "imageUrl": "https://picsum.photos/300/200?random&t=8"
+    "imageUrl": "assets/images/global/universities/ColumbiaU.png"
   },
   {
     "id": 9,
     "name": "University 4",
-    "imageUrl": "https://picsum.photos/300/200?random&t=9"
+    "imageUrl": "assets/images/global/universities/JohnHopkinsU.png"
   },
   {
     "id": 10,
     "name": "University 5",
-    "imageUrl": "https://picsum.photos/300/200?random&t=10"
+    "imageUrl": "assets/images/global/universities/YaleU.png"
   }
 ]

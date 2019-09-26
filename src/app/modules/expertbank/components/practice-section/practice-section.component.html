@@ -1,8 +1,18 @@
-<div class="row expertbanks-practice">
-  <div class="title">
-    <h3>{{title}}</h3>
+<section class="practiceSection section">
+  <div class="container">
+    <div class="row row-center">
+      <div class="col-12">
+        <h1 class="col_title section_header-2">
+          {{title}}
+        </h1>
+        <button 
+          mat-button
+          class="ncBttn ncBttn-primary"
+          (click)="handleClick($event)"
+        >
+          Practice NCLEX-RN now!
+        </button>
+      </div>
+    </div>
   </div>
-  <div class="action-button">
-    <button (click)="handleClick($event)">Practice NCLEX-RN now!</button>
-  </div>
-</div>
+</section>

@@ -6,3 +6,11 @@ export interface NewsModel {
   imageUrl: string
   buttonText: string,
 }
+
+export interface NewsPropertyModel {
+  title: string
+}
+
+export interface NewsPropertyFetchingModel {
+  title: boolean
+}

@@ -1,46 +1,46 @@
 <!-- container of your apps here / router outlet -->
 <div class="page-home">
 	<!-- Hero with Image -->
-	<app-hero-section [hero]="hero">
-	</app-hero-section>
+	<app-hero-section-container page="home">
+	</app-hero-section-container>
 
-	<!-- Students -->
-	<app-university-carousel [universities]="universities">
-	</app-university-carousel>
+	<!-- University Students -->
+	<app-university-section-container>
+	</app-university-section-container>
 
 	<!-- Nurse Practitioners, ... Institutions -->
-	<app-institution-section [institutions]="institutions">
-	</app-institution-section>
+	<app-institution-section-container>
+	</app-institution-section-container>
 
 	<!-- Our Accreditation -->
-	<app-accreditation-section [title]="accreditationTitle" [accreditations]="accreditations">
-	</app-accreditation-section>
+	<app-accreditation-section-container>
+	</app-accreditation-section-container>
 
 	<!-- ExpertBanks -->
-	<app-expertbank-section [title]="exportbankTitle" [buttonText]="expertbankButtonText" [expertbanks]="expertbanks">
-	</app-expertbank-section>
+	<app-expertbank-section-container>
+	</app-expertbank-section-container>
 
 	<!-- Figures - 1.5M -->
-	<app-figure-section [figures]="figures">
-	</app-figure-section>
+	<app-figure-section-container>
+	</app-figure-section-container>
 
 	<!-- Checkout Our ... Samples-->
-	<app-elearning-section [title]="elearningTitle" [buttonText]="elearningButtonText" [elearnings]="elearnings">
-	</app-elearning-section>
+	<app-elearning-section-container>
+	</app-elearning-section-container>
 
 	<!-- Latest News -->
-	<app-news-section [title]="newsTitle" [newsList]="newsList">
-	</app-news-section>
+	<app-news-section-container>
+	</app-news-section-container>
 
 	<!-- Improve ... (has forms) - Registration Form -->
-	<app-registration-section [title]="registrationTitle" [subtitle]="registrationSubtitle" (onSubmitForm)="handleSubmitRegistrationForm($event)">
-	</app-registration-section>
+	<app-registration-section-container page="home">
+	</app-registration-section-container>
 
 	<!-- Every Day, More Nursing... - Testimonials -->
-	<app-testimonial-section [title]="testimonialTitle" [testimonials]="testimonials">
-	</app-testimonial-section>
+	<app-testimonial-section-container>
+	</app-testimonial-section-container>
 
 	<!-- Subscribe to our Newletters -->
-	<app-subscription-section [title]="subscriptionTitle" (onSubmitForm)="handleSubmitSubscriptionForm($event)">
-	</app-subscription-section>
+	<app-subscription-section-container>
+	</app-subscription-section-container>
 </div>

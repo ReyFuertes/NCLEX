@@ -1,26 +1,33 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions, ofType } from '@ngrx/effects';
-import { of, zip, Observable } from 'rxjs';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { UniversityActionTypes, UniversityActions } from '../actions/university.action';
+import { LoadUniversityListSuccess, LoadUniversityList, LoadUniversityListFailure } from '../actions/university.action';
+import { UniversityService } from 'src/app/services/university.service';
+import { UniversityModel } from 'src/app/models/university.model';
+import { of } from 'rxjs';
 
 @Injectable()
 export class UniversityEffects {
-  constructor(private actions$: Actions) { }
+  loadUniversityList$ = createEffect(
+    () => this.actions$.pipe(
+      ofType(LoadUniversityList),
+      mergeMap(() => {
+        return this.universityService$.getUniversities()
+          .pipe(
+            map((list: UniversityModel[]) =>
+              LoadUniversityListSuccess({ list })
+            ),
+            catchError(error =>
+              of(LoadUniversityListFailure({ error }))
+            )
+          )
+        }
+      )
+    )
+  )
 
-  @Effect()
-  public loadUniversity$: Observable<any> = this.actions$.pipe(
-    ofType(UniversityActionTypes.LoadUniversity),
-    mergeMap((action: UniversityActions) => of([1, 2, 3]).pipe(
-      map(([sampleArr]) => {
-        return {
-          type: UniversityActionTypes.LoadUniversitySuccess,
-          payload: null
-        };
-      }),
-      catchError(() => {
-        return of({});
-      })
-    ))
-  );
+  constructor(
+    private actions$: Actions,
+    private universityService$: UniversityService
+  ) { }
 }

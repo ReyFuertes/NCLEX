@@ -1,63 +1,29 @@
 import { Injectable } from '@angular/core';
-import { ExpertbankModel } from '../models/expertbank.model';
+import { catchError, map } from 'rxjs/operators';
+import { BaseService } from './base.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class ExpertbankService {
-  private title$: string = "EXPERTBANKS TAKE A DATA-DRIVEN APPROACH"
-  private buttonText$: string = "Learn More"
-  private expertbanks$: ExpertbankModel[] = [
-    {
-      id: "1",
-      title: "Take a test",
-      description: `
-        At NCLEX ExpertAcademy, we focus on creating high-quality
-        questions that accurately reflect the material you’re
-        learning to ensure that you’re getting the best preparation
-        for your exams. We believe that providing in-depth answer
-          explanations will help you grasp every concept
-        so that you’re truly learning with us.
-      `,
-      imageUrl: "./assets/images/home/approach_graphic_1.png",
-    },
-    {
-      id: "2",
-      title: "Analyze",
-      description: `
-        Everyone learns differently. The system at NCLEX ExpertAcademy
-        will automatically analyze your results and adapt our tests
-        so that you can focus on the topics that you haven’t mastered
-        yet rather than having to go over the content that you already
-        know. We will also analyze your study habits to make sure that
-        your study time is as effective as possible.
-      `,
-      imageUrl: "./assets/images/home/approach_graphic_2.png",
-    },
-    {
-      id: "3",
-      title: "Improve",
-      description: `
-        The NCLEX ExpertAcademy e-learning experience 
-        has helped many students and professionals master 
-        different topics and improve their test performance.
-        We offer a fully customizable system that tailors to
-        your needs in order to offer efficient, 
-        effective, and enjoyable learning modules.
-      `,
-      imageUrl: "./assets/images/home/approach_graphic_3.png",
-    }
-  ]
+export class ExpertbankService extends BaseService {
+  private url = '/assets/data/expertbanks.json'
+  private propertyUrl = '/assets/data/expertbank.json'
 
-  constructor() { }
-
-  getTitle(): string {
-    return this.title$
+  getExpertbanks() {
+    return this.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  getButtonText(): string {
-    return this.buttonText$
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  getExpertBanks(): ExpertbankModel[] {
-    return this.expertbanks$
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
 }

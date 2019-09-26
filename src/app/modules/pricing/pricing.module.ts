@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PricingContainerComponent } from './container/pricing-container/pricing-container.component';
 import { PlanSectionComponent } from './components/plan-section/plan-section.component';
 import { PlanService } from './services/plan.service';
+import { PlanSectionContainerComponent } from './container/plan-section-container/plan-section-container.component';
 
 /**
  * Define your third party libs
@@ -25,7 +26,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     PricingContainerComponent,
-    PlanSectionComponent
+    PlanSectionComponent,
+    PlanSectionContainerComponent
   ],
   imports: [
     CommonModule,

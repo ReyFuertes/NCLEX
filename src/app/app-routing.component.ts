@@ -35,6 +35,18 @@ const routes: Routes = [
     path: 'pricing',
     loadChildren: './modules/pricing/pricing.module#PricingModule'
   },
+  {
+    path: 'contact',
+    loadChildren: './modules/contact/contact.module#ContactModule'
+  },
+  {
+    path: 'blog',
+    loadChildren: './modules/blog/blog.module#BlogModule'
+  },
+  {
+    path: 'admin',
+    loadChildren: './modules/admin/admin.module#AdminModule'
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

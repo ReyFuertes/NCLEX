@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
-import { ExpertbankContainerComponent } from './container/expertbank-container.component';
+import { ExpertbankContainerComponent } from './container/expertbank-container/expertbank-container.component';
 import { ExpertbankService } from 'src/app/services/expertbank.service';
 import { AdvantagesSectionComponent } from './components/advantages-section/advantages-section.component';
 import { AdvantageService } from './services/advantage.service';
@@ -14,6 +14,10 @@ import { PerformanceSectionComponent } from './components/performance-section/pe
 import { PerformanceService } from './services/performance.service';
 import { PracticeSectionComponent } from './components/practice-section/practice-section.component';
 import { PracticeService } from './services/practice.service';
+import { AdvantageSectionContainerComponent } from './container/advantage-section-container/advantage-section-container.component';
+import { FeatureSectionContainerComponent } from './container/feature-section-container/feature-section-container.component';
+import { PerformanceSectionContainerComponent } from './container/performance-section-container/performance-section-container.component';
+import { PracticeSectionContainerComponent } from './container/practice-section-container/practice-section-container.component';
 
 /**
  * Define your third party libs
@@ -35,7 +39,11 @@ const routes: Routes = [
     AdvantagesSectionComponent,
     FeaturesSectionComponent,
     PerformanceSectionComponent,
-    PracticeSectionComponent
+    PracticeSectionComponent,
+    AdvantageSectionContainerComponent,
+    FeatureSectionContainerComponent,
+    PerformanceSectionContainerComponent,
+    PracticeSectionContainerComponent
   ],
   imports: [
     CommonModule,

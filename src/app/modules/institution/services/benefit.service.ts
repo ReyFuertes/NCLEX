@@ -1,41 +1,31 @@
 import { Injectable } from '@angular/core';
-import { BenefitModel } from '../models/benefit.model';
+import { catchError, map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BaseService } from 'src/app/services/base.service';
 
-@Injectable()
-export class BenefitService {
-  private title: string = "NCLEX ExpertAcademy benefits students, professionals, and faculty."
-  private checkIconUrl: string = "https://picsum.photos/30"
-  private benefits: BenefitModel[] = [
-    {
-      id: "1",
-      description: "Exam scores increase significantly"
-    },
-    {
-      id: "2",
-      description: "Students and professionals can achieve their potential"
-    },
-    {
-      id: "3",
-      description: "Grades improve for the whole class"
-    },
-    {
-      id: "4",
-      description: "Your program will achieve a higher rating"
-    }
-  ]
+@Injectable({
+  providedIn: 'root'
+})
+export class BenefitService extends BaseService {
+  private url = '/assets/data/benefits.json'
+  private propertyUrl = '/assets/data/benefit.json'
 
-  constructor() { }
-
-  getTitle(): string {
-    return this.title
+  getBenefits() {
+    return this.get(this.url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
-  getCheckIconUrl(): string {
-    return this.checkIconUrl
+  getProperty(property: string) {
+    return this.get(this.propertyUrl)
+      .pipe(
+        map((data) => data[property]),
+        catchError(this.handleError)
+      )
   }
 
-  getBenefits(): BenefitModel[] {
-    return this.benefits
+  constructor(private _http: HttpClient) {
+    super(_http)
   }
-
 }

@@ -6,3 +6,11 @@ export interface TestimonialModel {
   position: string,
   company: string,
 }
+
+export interface TestimonialPropertyModel {
+  title: string
+}
+
+export interface TestimonialPropertyFetchingModel {
+  title: boolean
+}
