@@ -10,9 +10,9 @@ import { getHeroByPage } from 'src/app/store/selectors/hero.selector';
   templateUrl: './hero-section-container.component.html',
 })
 export class HeroSectionContainerComponent implements OnInit {
-  @Input() page: string
+  @Input() page: string;
 
-  hero: Observable<HeroModel>
+  hero: Observable<HeroModel>;
 
   constructor(private store: Store<any>) {
   }
@@ -20,10 +20,10 @@ export class HeroSectionContainerComponent implements OnInit {
   ngOnInit() {
     this.hero = this.store.pipe(
       select(getHeroByPage, { page: this.page })
-    )
+    );
 
     this.store.dispatch(
       LoadHero({ page: this.page })
-    )
+    );
   }
 }

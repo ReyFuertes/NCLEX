@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { QuestionPropertyModel, QuestionPropertyFetchingModel } from '../../models/question.model';
-import { LoadQuestionProperty, LoadQuestionPropertySuccess, LoadQuestionPropertyFailure, SubmitQuestionForm, SubmitQuestionFormSuccess, SubmitQuestionFormFailure } from '../actions/question.action';
+import {
+  LoadQuestionProperty,
+  LoadQuestionPropertySuccess,
+  LoadQuestionPropertyFailure,
+  SubmitQuestionForm,
+  SubmitQuestionFormSuccess,
+  SubmitQuestionFormFailure
+} from '../actions/question.action';
 
 export interface QuestionState {
   // property
-  properties: QuestionPropertyModel,
-  propertiesFetching: QuestionPropertyFetchingModel,
-  propertiesError: QuestionPropertyModel,
+  properties: QuestionPropertyModel;
+  propertiesFetching: QuestionPropertyFetchingModel;
+  propertiesError: QuestionPropertyModel;
 
   // form
-  formSubmitting: boolean,
-  formResponse: any,
-  formError: any
+  formSubmitting: boolean;
+  formResponse: any;
+  formError: any;
 }
 
 const initialState: QuestionState = {
@@ -40,7 +47,7 @@ const initialState: QuestionState = {
   formError: null
 };
 
-const _questionReducer = createReducer(
+const questionReducer = createReducer(
   initialState,
 
   // property
@@ -112,10 +119,10 @@ const _questionReducer = createReducer(
       formError: action.formError
     })
   ),
-)
+);
 
 export function QuestionReducer(state, action) {
-  return _questionReducer(state, action)
+  return questionReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

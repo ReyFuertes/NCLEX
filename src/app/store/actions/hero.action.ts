@@ -14,25 +14,25 @@ export enum HeroActionTypes {
 export const LoadHero = createAction(
   HeroActionTypes.LoadHero,
   props<{ page: string }>()
-)
+);
 
 export const LoadHeroSuccess = createAction(
   HeroActionTypes.LoadHeroSuccess,
   props<{ page: string, hero: HeroModel }>()
-)
+);
 
 export const LoadHeroFailure = createAction(
   HeroActionTypes.LoadHeroFailure,
   props<{ error: any }>()
-)
+);
 
 // admin
 export const PreviewHero = createAction(
   HeroActionTypes.PreviewHero,
   props<{ page: string, hero: HeroModel }>()
-)
+);
 
 export const PreviewHeroSuccess = createAction(
   HeroActionTypes.PreviewHeroSuccess,
   props<{ page: string, hero: HeroModel }>()
-)
+);

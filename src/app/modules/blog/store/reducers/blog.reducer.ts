@@ -6,12 +6,12 @@ import { BlogModel, PaginateBlogModel } from '../../models/blog.model';
 
 export interface BlogState {
   // list
-  list: BlogModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: BlogModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // pagination
-  pagination: PaginateBlogModel
+  pagination: PaginateBlogModel;
 }
 
 const initialState: BlogState = {
@@ -28,7 +28,7 @@ const initialState: BlogState = {
   }
 };
 
-const _blogReducer = createReducer(
+const blogReducer = createReducer(
   initialState,
 
   // list
@@ -60,10 +60,10 @@ const _blogReducer = createReducer(
     PaginateBlogList,
     (state, action) => ({ ...state, pagination: action.pagination })
   ),
-)
+);
 
 export function BlogReducer(state, action) {
-  return _blogReducer(state, action)
+  return blogReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

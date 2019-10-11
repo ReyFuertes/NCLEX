@@ -7,9 +7,9 @@ import { ElearningModel } from 'src/app/models/elearning.model';
   styleUrls: ['./elearning-section.component.scss']
 })
 export class ElearningSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() buttonText: string
-  @Input() elearnings: ElearningModel[]
+  @Input() title: string;
+  @Input() buttonText: string;
+  @Input() elearnings: ElearningModel[];
 
   constructor() { }
 

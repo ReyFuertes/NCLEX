@@ -36,12 +36,12 @@ const routes: Routes = [
 
 const components = [
   AdminLoginFormComponent
-]
+];
 
 const containers = [
   DasboardContainerComponent,
   AdminLoginContainerComponent
-]
+];
 
 @NgModule({
   declarations: [

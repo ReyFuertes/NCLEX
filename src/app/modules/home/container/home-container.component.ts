@@ -8,9 +8,9 @@ import AOS from 'aos';
   styleUrls: ['./home-container.component.scss']
 })
 export class HomeContainerComponent implements OnInit {
-  errorMessage: string
+  errorMessage: string;
 
-  subscriptionTitle: string
+  subscriptionTitle: string;
 
   constructor() { }
 

@@ -5,16 +5,16 @@ import { BaseService } from './base.service';
 
 @Injectable()
 export class FigureService extends BaseService {
-  private url = '/assets/data/figures.json'
+  private url = '/assets/data/figures.json';
 
   getFigures() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

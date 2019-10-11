@@ -10,28 +10,28 @@ import { LoadAdvantageList, LoadAdvantageProperty } from '../../store/actions/ad
   templateUrl: './advantage-section-container.component.html',
 })
 export class AdvantageSectionContainerComponent implements OnInit {
-  advantages: Observable<AdvantageModel[]>
-  title: Observable<string>
+  advantages: Observable<AdvantageModel[]>;
+  title: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.advantages = this.store.pipe(
       select(getAdvantageList)
-    )
+    );
     this.title = this.store.pipe(
       select(getAdvantageProperty, { property: 'title' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
+    this.getList();
+    this.getProperty('title');
   }
 
   getList() {
-    this.store.dispatch(LoadAdvantageList())
+    this.store.dispatch(LoadAdvantageList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadAdvantageProperty({ property }))
+    this.store.dispatch(LoadAdvantageProperty({ property }));
   }
 }

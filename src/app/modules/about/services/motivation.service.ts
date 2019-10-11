@@ -7,16 +7,16 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class MotivationService extends BaseService {
-  private url = '/assets/data/motivations.json'
+  private url = '/assets/data/motivations.json';
 
   getMotivations() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

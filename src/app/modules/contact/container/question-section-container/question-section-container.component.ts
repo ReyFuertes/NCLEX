@@ -10,34 +10,34 @@ import { QuestionFormModel } from '../../models/question.model';
   templateUrl: './question-section-container.component.html',
 })
 export class QuestionSectionContainerComponent implements OnInit {
-  title: Observable<string>
-  subtitle: Observable<string>
-  buttonText: Observable<string>
+  title: Observable<string>;
+  subtitle: Observable<string>;
+  buttonText: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.title = this.store.pipe(
       select(getQuestionProperty, { property: 'title' })
-    )
+    );
     this.subtitle = this.store.pipe(
       select(getQuestionProperty, { property: 'subtitle' })
-    )
+    );
     this.buttonText = this.store.pipe(
       select(getQuestionProperty, { property: 'buttonText' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getProperty('title')
-    this.getProperty('subtitle')
-    this.getProperty('buttonText')
+    this.getProperty('title');
+    this.getProperty('subtitle');
+    this.getProperty('buttonText');
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadQuestionProperty({ property }))
+    this.store.dispatch(LoadQuestionProperty({ property }));
   }
 
   handleSubmitQuestionForm(formData: QuestionFormModel) {
-    this.store.dispatch(SubmitQuestionForm({ formData }))
+    this.store.dispatch(SubmitQuestionForm({ formData }));
   }
 }
 

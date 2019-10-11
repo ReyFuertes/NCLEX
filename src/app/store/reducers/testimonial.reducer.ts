@@ -1,19 +1,26 @@
-import { LoadTestimonialList, LoadTestimonialListSuccess, LoadTestimonialListFailure, LoadTestimonialProperty, LoadTestimonialPropertySuccess, LoadTestimonialPropertyFailure } from '../actions/testimonial.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { TestimonialModel, TestimonialPropertyModel, TestimonialPropertyFetchingModel } from 'src/app/models/testimonial.model';
+import {
+  LoadTestimonialList,
+  LoadTestimonialListSuccess,
+  LoadTestimonialListFailure,
+  LoadTestimonialProperty,
+  LoadTestimonialPropertySuccess,
+  LoadTestimonialPropertyFailure
+} from '../actions/testimonial.action';
 
 export interface TestimonialState {
   // list
-  list: TestimonialModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: TestimonialModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: TestimonialPropertyModel,
-  propertiesFetching: TestimonialPropertyFetchingModel,
-  propertiesError: TestimonialPropertyModel
+  properties: TestimonialPropertyModel;
+  propertiesFetching: TestimonialPropertyFetchingModel;
+  propertiesError: TestimonialPropertyModel;
 }
 
 const initialState: TestimonialState = {
@@ -34,7 +41,7 @@ const initialState: TestimonialState = {
   }
 };
 
-const _testimonialReducer = createReducer(
+const testimonialReducer = createReducer(
   initialState,
 
   // list
@@ -94,10 +101,10 @@ const _testimonialReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function TestimonialReducer(state, action) {
-  return _testimonialReducer(state, action)
+  return testimonialReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

@@ -2,14 +2,19 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { HeroModel } from 'src/app/models/hero.model';
-import { LoadHero, LoadHeroSuccess, LoadHeroFailure, PreviewHero, PreviewHeroSuccess } from '../actions/hero.action';
+import {
+  LoadHero,
+  LoadHeroSuccess,
+  LoadHeroFailure,
+  PreviewHeroSuccess
+} from '../actions/hero.action';
 
 export interface HeroState {
   heroes: {
     [type: string]: HeroModel
-  },
-  isFetching: boolean,
-  error: any
+  };
+  isFetching: boolean;
+  error: any;
 }
 
 const initialState: HeroState = {
@@ -18,7 +23,7 @@ const initialState: HeroState = {
   error: null
 };
 
-const _heroReducer = createReducer(
+const heroReducer = createReducer(
   initialState,
 
   on(
@@ -57,10 +62,10 @@ const _heroReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function HeroReducer(state, action) {
-  return _heroReducer(state, action)
+  return heroReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

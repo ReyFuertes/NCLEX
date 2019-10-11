@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./university-section-details-container.component.scss']
 })
 export class UniversitySectionDetailsContainerComponent implements OnInit {
-  title: string
+  title: string;
 
   constructor(
     private store: Store<any>

@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadElearningListSuccess, LoadElearningList, LoadElearningListFailure, LoadElearningPropertySuccess, LoadElearningPropertyFailure, LoadElearningProperty } from '../actions/elearning.action';
+import { of } from 'rxjs';
 import { ElearningService } from 'src/app/services/elearning.service';
 import { ElearningModel } from 'src/app/models/elearning.model';
-import { of } from 'rxjs';
+import {
+  LoadElearningListSuccess,
+  LoadElearningList,
+  LoadElearningListFailure,
+  LoadElearningPropertySuccess,
+  LoadElearningPropertyFailure,
+  LoadElearningProperty
+} from '../actions/elearning.action';
 
 @Injectable()
 export class ElearningEffects {
@@ -21,11 +28,11 @@ export class ElearningEffects {
             catchError(error =>
               of(LoadElearningListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadElearningProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class ElearningEffects {
             catchError(propertyError =>
               of(LoadElearningPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

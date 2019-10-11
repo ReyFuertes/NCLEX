@@ -6,17 +6,17 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class PerformanceService extends BaseService {
-  private propertyUrl = '/assets/data/performance.json'
+  private propertyUrl = '/assets/data/performance.json';
 
   getProperty(property: string) {
     return this.get(this.propertyUrl)
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

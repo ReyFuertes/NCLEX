@@ -10,24 +10,24 @@ import { LoadBlogList, PaginateBlogList } from '../../store/actions/blog.action'
   templateUrl: './blog-section-container.component.html',
 })
 export class BlogSectionContainerComponent implements OnInit {
-  blogs: Observable<BlogModel[]>
-  pagination: Observable<PaginateBlogModel>
+  blogs: Observable<BlogModel[]>;
+  pagination: Observable<PaginateBlogModel>;
 
   constructor(private store: Store<any>) {
     this.blogs = this.store.pipe(
       select(getBlogList)
-    )
+    );
     this.pagination = this.store.pipe(
       select(getBlogPagination)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadBlogList())
+    this.store.dispatch(LoadBlogList());
   }
 
   handlePaginate(pagination: PaginateBlogModel): void {
-    this.store.dispatch(PaginateBlogList({ pagination }))
+    this.store.dispatch(PaginateBlogList({ pagination }));
   }
 }
 

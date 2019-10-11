@@ -5,14 +5,14 @@ import { BaseService } from './base.service';
 
 @Injectable()
 export class TestimonialService extends BaseService {
-  private url = '/assets/data/testimonials.json'
-  private propertyUrl = '/assets/data/testimonial.json'
+  private url = '/assets/data/testimonials.json';
+  private propertyUrl = '/assets/data/testimonial.json';
 
   getTestimonials() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
   getProperty(property: string) {
@@ -20,10 +20,10 @@ export class TestimonialService extends BaseService {
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

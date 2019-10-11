@@ -10,23 +10,23 @@ import { SubscriptionFormModel } from 'src/app/models/subscription-form.model';
   templateUrl: './subscription-section-container.component.html',
 })
 export class SubscriptionSectionContainerComponent implements OnInit {
-  title: Observable<string>
+  title: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.title = this.store.pipe(
       select(getSubscriptionProperty, { property: 'title' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getProperty('title')
+    this.getProperty('title');
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadSubscriptionProperty({ property }))
+    this.store.dispatch(LoadSubscriptionProperty({ property }));
   }
 
   handleSubmitSubscriptionForm(formData: SubscriptionFormModel) {
-    this.store.dispatch(SubmitSubscriptionForm({ formData }))
+    this.store.dispatch(SubmitSubscriptionForm({ formData }));
   }
 }

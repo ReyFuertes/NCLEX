@@ -7,7 +7,7 @@ import { InstitutionModel } from 'src/app/models/institution.model';
   styleUrls: ['./institution-section.component.scss']
 })
 export class InstitutionSectionComponent implements OnInit {
-  @Input() institutions: InstitutionModel[]
+  @Input() institutions: InstitutionModel[];
 
   constructor() { }
 

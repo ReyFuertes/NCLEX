@@ -11,14 +11,14 @@ export enum FaqActionTypes {
 // list
 export const LoadFaqList = createAction(
   FaqActionTypes.LoadFaqList
-)
+);
 
 export const LoadFaqListSuccess = createAction(
   FaqActionTypes.LoadFaqListSuccess,
   props<{ list: FaqModel[] }>()
-)
+);
 
 export const LoadFaqListFailure = createAction(
   FaqActionTypes.LoadFaqListFailure,
   props<{ error: any }>()
-)
+);

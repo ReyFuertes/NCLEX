@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { FeatureModel } from '../../models/feature.model';
 import { FeatureService } from '../../services/feature.service';
-import { LoadFeatureListSuccess, LoadFeatureList, LoadFeatureListFailure, LoadFeaturePropertySuccess, LoadFeaturePropertyFailure, LoadFeatureProperty } from '../actions/feature.action';
+import {
+  LoadFeatureListSuccess,
+  LoadFeatureList,
+  LoadFeatureListFailure,
+  LoadFeaturePropertySuccess,
+  LoadFeaturePropertyFailure,
+  LoadFeatureProperty
+} from '../actions/feature.action';
 
 @Injectable()
 export class FeatureEffects {
@@ -21,11 +28,11 @@ export class FeatureEffects {
             catchError(error =>
               of(LoadFeatureListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadFeatureProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class FeatureEffects {
             catchError(propertyError =>
               of(LoadFeaturePropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

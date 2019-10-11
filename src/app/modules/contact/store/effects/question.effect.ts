@@ -3,7 +3,14 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { QuestionService } from '../../services/question.service';
-import { LoadQuestionPropertySuccess, LoadQuestionPropertyFailure, LoadQuestionProperty, SubmitQuestionForm, SubmitQuestionFormSuccess, SubmitQuestionFormFailure } from '../actions/question.action';
+import {
+  LoadQuestionPropertySuccess,
+  LoadQuestionPropertyFailure,
+  LoadQuestionProperty,
+  SubmitQuestionForm,
+  SubmitQuestionFormSuccess,
+  SubmitQuestionFormFailure
+} from '../actions/question.action';
 
 @Injectable()
 export class QuestionEffects {
@@ -20,11 +27,11 @@ export class QuestionEffects {
             catchError(propertyError =>
               of(LoadQuestionPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // form
   submitQuestionForm$ = createEffect(
@@ -39,11 +46,11 @@ export class QuestionEffects {
             catchError(formError =>
               of(SubmitQuestionFormFailure({ formError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

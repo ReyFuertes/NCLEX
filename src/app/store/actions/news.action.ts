@@ -16,30 +16,30 @@ export enum NewsActionTypes {
 // list
 export const LoadNewsList = createAction(
   NewsActionTypes.LoadNewsList
-)
+);
 
 export const LoadNewsListSuccess = createAction(
   NewsActionTypes.LoadNewsListSuccess,
   props<{ list: NewsModel[] }>()
-)
+);
 
 export const LoadNewsListFailure = createAction(
   NewsActionTypes.LoadNewsListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadNewsProperty = createAction(
   NewsActionTypes.LoadNewsProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadNewsPropertySuccess = createAction(
   NewsActionTypes.LoadNewsPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadNewsPropertyFailure = createAction(
   NewsActionTypes.LoadNewsPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

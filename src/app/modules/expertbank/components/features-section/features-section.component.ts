@@ -7,8 +7,8 @@ import { FeatureModel } from '../../models/feature.model';
   styleUrls: ['./features-section.component.scss']
 })
 export class FeaturesSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() features: FeatureModel[]
+  @Input() title: string;
+  @Input() features: FeatureModel[];
 
   constructor() { }
 

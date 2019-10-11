@@ -9,14 +9,14 @@ export enum UniversityActionTypes {
 
 export const LoadUniversityList = createAction(
   UniversityActionTypes.LoadUniversityList
-)
+);
 
 export const LoadUniversityListSuccess = createAction(
   UniversityActionTypes.LoadUniversityListSuccess,
   props<{ list: UniversityModel[] }>()
-)
+);
 
 export const LoadUniversityListFailure = createAction(
   UniversityActionTypes.LoadUniversityListFailure,
   props<{ error: any }>()
-)
+);

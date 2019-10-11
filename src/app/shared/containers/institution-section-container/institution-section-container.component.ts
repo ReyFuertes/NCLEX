@@ -10,15 +10,15 @@ import { InstitutionModel } from 'src/app/models/institution.model';
   templateUrl: './institution-section-container.component.html',
 })
 export class InstitutionSectionContainerComponent implements OnInit {
-  institutions: Observable<InstitutionModel[]>
+  institutions: Observable<InstitutionModel[]>;
 
   constructor(private store: Store<any>) {
     this.institutions = this.store.pipe(
       select(getInstitutionList)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadInstitutionList())
+    this.store.dispatch(LoadInstitutionList());
   }
 }

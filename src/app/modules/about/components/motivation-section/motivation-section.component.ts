@@ -7,7 +7,7 @@ import { MotivationModel } from '../../models/motivation.model';
   styleUrls: ['./motivation-section.component.scss']
 })
 export class MotivationSectionComponent implements OnInit {
-  @Input() motivations: MotivationModel[]
+  @Input() motivations: MotivationModel[];
 
   constructor() { }
 

@@ -11,14 +11,14 @@ export enum PracticeActionTypes {
 export const LoadPracticeProperty = createAction(
   PracticeActionTypes.LoadPracticeProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadPracticePropertySuccess = createAction(
   PracticeActionTypes.LoadPracticePropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadPracticePropertyFailure = createAction(
   PracticeActionTypes.LoadPracticePropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

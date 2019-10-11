@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { GoalModel, GoalPropertyModel, GoalPropertyFetchingModel } from '../../models/goal.model';
-import { LoadGoalList, LoadGoalListSuccess, LoadGoalListFailure, LoadGoalProperty, LoadGoalPropertySuccess, LoadGoalPropertyFailure } from '../actions/goal.action';
+import {
+  LoadGoalList,
+  LoadGoalListSuccess,
+  LoadGoalListFailure,
+  LoadGoalProperty,
+  LoadGoalPropertySuccess,
+  LoadGoalPropertyFailure
+} from '../actions/goal.action';
 
 export interface GoalState {
   // list
-  list: GoalModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: GoalModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: GoalPropertyModel,
-  propertiesFetching: GoalPropertyFetchingModel,
-  propertiesError: GoalPropertyModel
+  properties: GoalPropertyModel;
+  propertiesFetching: GoalPropertyFetchingModel;
+  propertiesError: GoalPropertyModel;
 }
 
 const initialState: GoalState = {
@@ -40,7 +47,7 @@ const initialState: GoalState = {
   }
 };
 
-const _goalReducer = createReducer(
+const goalReducer = createReducer(
   initialState,
 
   // list
@@ -100,10 +107,10 @@ const _goalReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function GoalReducer(state, action) {
-  return _goalReducer(state, action)
+  return goalReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

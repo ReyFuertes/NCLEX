@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ImprovementModel } from '../../models/improvement.model';
 import { ImprovementService } from '../../services/improvement.service';
-import { LoadImprovementListSuccess, LoadImprovementList, LoadImprovementListFailure, LoadImprovementPropertySuccess, LoadImprovementPropertyFailure, LoadImprovementProperty } from '../actions/improvement.action';
+import {
+  LoadImprovementListSuccess,
+  LoadImprovementList,
+  LoadImprovementListFailure,
+  LoadImprovementPropertySuccess,
+  LoadImprovementPropertyFailure,
+  LoadImprovementProperty
+} from '../actions/improvement.action';
 
 @Injectable()
 export class ImprovementEffects {
@@ -21,11 +28,11 @@ export class ImprovementEffects {
             catchError(error =>
               of(LoadImprovementListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadImprovementProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class ImprovementEffects {
             catchError(propertyError =>
               of(LoadImprovementPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

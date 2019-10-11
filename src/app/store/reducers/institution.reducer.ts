@@ -1,13 +1,13 @@
-import { LoadInstitutionList, LoadInstitutionListSuccess, LoadInstitutionListFailure } from '../actions/institution.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { InstitutionModel } from 'src/app/models/institution.model';
+import { LoadInstitutionList, LoadInstitutionListSuccess, LoadInstitutionListFailure } from '../actions/institution.action';
 
 export interface InstitutionState {
-  list: InstitutionModel[],
-  isFetchingList: boolean,
-  error: any
+  list: InstitutionModel[];
+  isFetchingList: boolean;
+  error: any;
 }
 
 const initialState: InstitutionState = {
@@ -16,7 +16,7 @@ const initialState: InstitutionState = {
   error: null
 };
 
-const _institutionReducer = createReducer(
+const institutionReducer = createReducer(
   initialState,
 
   on(
@@ -33,10 +33,10 @@ const _institutionReducer = createReducer(
     LoadInstitutionListFailure,
     (state, action) => ({ ...state, isFetchingList: false, error: action.error })
   ),
-)
+);
 
 export function InstitutionReducer(state, action) {
-  return _institutionReducer(state, action)
+  return institutionReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

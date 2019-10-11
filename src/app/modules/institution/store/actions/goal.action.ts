@@ -16,30 +16,30 @@ export enum GoalActionTypes {
 // list
 export const LoadGoalList = createAction(
   GoalActionTypes.LoadGoalList
-)
+);
 
 export const LoadGoalListSuccess = createAction(
   GoalActionTypes.LoadGoalListSuccess,
   props<{ list: GoalModel[] }>()
-)
+);
 
 export const LoadGoalListFailure = createAction(
   GoalActionTypes.LoadGoalListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadGoalProperty = createAction(
   GoalActionTypes.LoadGoalProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadGoalPropertySuccess = createAction(
   GoalActionTypes.LoadGoalPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadGoalPropertyFailure = createAction(
   GoalActionTypes.LoadGoalPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

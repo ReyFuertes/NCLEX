@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { PreparationModel, PreparationPropertyModel, PreparationPropertyFetchingModel } from '../../models/preparation.model';
-import { LoadPreparationList, LoadPreparationListSuccess, LoadPreparationListFailure, LoadPreparationProperty, LoadPreparationPropertySuccess, LoadPreparationPropertyFailure } from '../actions/preparation.action';
+import {
+  LoadPreparationList,
+  LoadPreparationListSuccess,
+  LoadPreparationListFailure,
+  LoadPreparationProperty,
+  LoadPreparationPropertySuccess,
+  LoadPreparationPropertyFailure
+} from '../actions/preparation.action';
 
 export interface PreparationState {
   // list
-  list: PreparationModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: PreparationModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: PreparationPropertyModel,
-  propertiesFetching: PreparationPropertyFetchingModel,
-  propertiesError: PreparationPropertyModel
+  properties: PreparationPropertyModel;
+  propertiesFetching: PreparationPropertyFetchingModel;
+  propertiesError: PreparationPropertyModel;
 }
 
 const initialState: PreparationState = {
@@ -40,7 +47,7 @@ const initialState: PreparationState = {
   }
 };
 
-const _preparationReducer = createReducer(
+const preparationReducer = createReducer(
   initialState,
 
   // list
@@ -100,10 +107,10 @@ const _preparationReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function PreparationReducer(state, action) {
-  return _preparationReducer(state, action)
+  return preparationReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

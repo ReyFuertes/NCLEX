@@ -34,7 +34,7 @@ const routes: Routes = [
     QuestionSectionContainerComponent,
     InfoSectionContainerComponent
   ],
-  imports: [  
+  imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

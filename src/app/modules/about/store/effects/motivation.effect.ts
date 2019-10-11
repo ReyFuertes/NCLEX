@@ -20,11 +20,11 @@ export class MotivationEffects {
             catchError(error =>
               of(LoadMotivationListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

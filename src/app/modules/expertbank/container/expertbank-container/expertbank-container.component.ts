@@ -7,7 +7,7 @@ import AOS from 'aos';
   styleUrls: ['./expertbank-container.component.scss']
 })
 export class ExpertbankContainerComponent implements OnInit {
-  practiceTitle: string
+  practiceTitle: string;
 
   constructor() { }
 

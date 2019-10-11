@@ -20,11 +20,11 @@ export class AboutUsEffects {
             catchError(error =>
               of(LoadAboutUsListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

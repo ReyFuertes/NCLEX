@@ -11,15 +11,15 @@ export enum InfoActionTypes {
 export const LoadInfoProperty = createAction(
   InfoActionTypes.LoadInfoProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadInfoPropertySuccess = createAction(
   InfoActionTypes.LoadInfoPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadInfoPropertyFailure = createAction(
   InfoActionTypes.LoadInfoPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);
 

@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { WorkModel } from '../../models/work.model';
 import { WorkService } from '../../services/work.service';
-import { LoadWorkListSuccess, LoadWorkList, LoadWorkListFailure, LoadWorkPropertySuccess, LoadWorkPropertyFailure, LoadWorkProperty } from '../actions/work.action';
+import {
+  LoadWorkListSuccess,
+  LoadWorkList,
+  LoadWorkListFailure,
+  LoadWorkPropertySuccess,
+  LoadWorkPropertyFailure,
+  LoadWorkProperty
+} from '../actions/work.action';
 
 @Injectable()
 export class WorkEffects {
@@ -21,11 +28,11 @@ export class WorkEffects {
             catchError(error =>
               of(LoadWorkListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadWorkProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class WorkEffects {
             catchError(propertyError =>
               of(LoadWorkPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

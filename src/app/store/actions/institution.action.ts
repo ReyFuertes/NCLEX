@@ -9,14 +9,14 @@ export enum InstitutionActionTypes {
 
 export const LoadInstitutionList = createAction(
   InstitutionActionTypes.LoadInstitutionList
-)
+);
 
 export const LoadInstitutionListSuccess = createAction(
   InstitutionActionTypes.LoadInstitutionListSuccess,
   props<{ list: InstitutionModel[] }>()
-)
+);
 
 export const LoadInstitutionListFailure = createAction(
   InstitutionActionTypes.LoadInstitutionListFailure,
   props<{ error: any }>()
-)
+);

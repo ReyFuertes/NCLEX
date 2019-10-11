@@ -7,10 +7,10 @@ import { ExpertbankModel } from 'src/app/models/expertbank.model';
   styleUrls: ['./expertbank-section.component.scss']
 })
 export class ExpertbankSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() buttonText: string
-  @Input() expertbanks: ExpertbankModel[]
-  @Output() onButtonClick = new EventEmitter()
+  @Input() title: string;
+  @Input() buttonText: string;
+  @Input() expertbanks: ExpertbankModel[];
+  @Output() buttonClick = new EventEmitter();
 
   constructor() { }
 
@@ -18,6 +18,6 @@ export class ExpertbankSectionComponent implements OnInit {
   }
 
   handleClick() {
-    this.onButtonClick.emit()
+    this.buttonClick.emit();
   }
 }

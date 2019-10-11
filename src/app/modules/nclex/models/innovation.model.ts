@@ -1,14 +1,14 @@
 export interface InnovationModel {
-  id: string,
-  title: string
+  id: string;
+  title: string;
 }
 
 export interface InnovationPropertyModel {
-  title: string,
-  imageUrl: string
+  title: string;
+  imageUrl: string;
 }
 
 export interface InnovationPropertyFetchingModel {
-  title: boolean,
-  imageUrl: boolean
+  title: boolean;
+  imageUrl: boolean;
 }

@@ -16,30 +16,30 @@ export enum AccreditationActionTypes {
 // list
 export const LoadAccreditationList = createAction(
   AccreditationActionTypes.LoadAccreditationList
-)
+);
 
 export const LoadAccreditationListSuccess = createAction(
   AccreditationActionTypes.LoadAccreditationListSuccess,
   props<{ list: AccreditationModel[] }>()
-)
+);
 
 export const LoadAccreditationListFailure = createAction(
   AccreditationActionTypes.LoadAccreditationListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadAccreditationProperty = createAction(
   AccreditationActionTypes.LoadAccreditationProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadAccreditationPropertySuccess = createAction(
   AccreditationActionTypes.LoadAccreditationPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadAccreditationPropertyFailure = createAction(
   AccreditationActionTypes.LoadAccreditationPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

@@ -13,6 +13,6 @@ export class PreviewSectionComponent implements OnInit {
   }
 
   toggleView(view: string) {
-    console.log('@TODO: toggleView', view)
+    console.log('@TODO: toggleView', view);
   }
 }

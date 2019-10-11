@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, Input, OnChanges } from '@angular/core';
 import { UniversityModel } from 'src/app/models/university.model';
-import chunk from 'lodash/chunk'
+import chunk from 'lodash/chunk';
 
 @Component({
   encapsulation: ViewEncapsulation.None, // for scss reasons
@@ -11,9 +11,9 @@ import chunk from 'lodash/chunk'
 export class UniversityCarouselComponent implements OnInit, OnChanges {
   @Input() universities: UniversityModel[];
 
-  private itemPerSlide$: number = 5
+  private itemPerSlide$ = 5;
 
-  slides: []
+  slides: [];
 
   constructor() { }
 
@@ -22,12 +22,12 @@ export class UniversityCarouselComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (changes.universities) {
-      this.setSlides(changes.universities.currentValue)
+      this.setSlides(changes.universities.currentValue);
     }
   }
 
   setSlides(universities: UniversityModel): void {
-    this.slides = chunk(universities, this.itemPerSlide$)
+    this.slides = chunk(universities, this.itemPerSlide$);
   }
 
 }

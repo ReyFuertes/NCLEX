@@ -5,14 +5,14 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ElearningService extends BaseService {
-  private url = '/assets/data/elearnings.json'
-  private propertyUrl = '/assets/data/elearning.json'
+  private url = '/assets/data/elearnings.json';
+  private propertyUrl = '/assets/data/elearning.json';
 
   getElearnings() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
   getProperty(property: string) {
@@ -20,10 +20,10 @@ export class ElearningService extends BaseService {
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

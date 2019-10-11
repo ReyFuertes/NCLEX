@@ -6,10 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./performance-section.component.scss']
 })
 export class PerformanceSectionComponent implements OnInit {
-  @Input() imageUrlBack: string
-  @Input() imageUrlFront: string
-  @Input() title: string
-  @Input() description: string
+  @Input() imageUrlBack: string;
+  @Input() imageUrlFront: string;
+  @Input() title: string;
+  @Input() description: string;
 
   constructor() { }
 

@@ -5,9 +5,9 @@ import { LoadMotivationList, LoadMotivationListSuccess, LoadMotivationListFailur
 import { MotivationModel } from '../../models/motivation.model';
 
 export interface MotivationState {
-  list: MotivationModel[],
-  isFetchingList: boolean,
-  error: any
+  list: MotivationModel[];
+  isFetchingList: boolean;
+  error: any;
 }
 
 const initialState: MotivationState = {
@@ -16,7 +16,7 @@ const initialState: MotivationState = {
   error: null
 };
 
-const _motivationReducer = createReducer(
+const motivationReducer = createReducer(
   initialState,
 
   on(
@@ -33,10 +33,10 @@ const _motivationReducer = createReducer(
     LoadMotivationListFailure,
     (state, action) => ({ ...state, isFetchingList: false, error: action.error })
   ),
-)
+);
 
 export function MotivationReducer(state, action) {
-  return _motivationReducer(state, action)
+  return motivationReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

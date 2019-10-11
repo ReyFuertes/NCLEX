@@ -7,14 +7,14 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class ImprovementService extends BaseService {
-  private url = '/assets/data/improvements.json'
-  private propertyUrl = '/assets/data/improvement.json'
+  private url = '/assets/data/improvements.json';
+  private propertyUrl = '/assets/data/improvement.json';
 
   getImprovements() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
   getProperty(property: string) {
@@ -22,10 +22,10 @@ export class ImprovementService extends BaseService {
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

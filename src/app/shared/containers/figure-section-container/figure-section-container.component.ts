@@ -10,15 +10,15 @@ import { LoadFigureList } from 'src/app/store/actions/figure.action';
   templateUrl: './figure-section-container.component.html',
 })
 export class FigureSectionContainerComponent implements OnInit {
-  figures: Observable<FigureModel[]>
+  figures: Observable<FigureModel[]>;
 
   constructor(private store: Store<any>) {
     this.figures = this.store.pipe(
       select(getFigureList)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadFigureList())
+    this.store.dispatch(LoadFigureList());
   }
 }

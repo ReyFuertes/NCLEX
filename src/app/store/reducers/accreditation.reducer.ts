@@ -1,19 +1,30 @@
-import { LoadAccreditationList, LoadAccreditationListSuccess, LoadAccreditationListFailure, LoadAccreditationProperty, LoadAccreditationPropertySuccess, LoadAccreditationPropertyFailure } from '../actions/accreditation.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { AccreditationModel, AccreditationPropertyModel, AccreditationPropertyFetchingModel } from 'src/app/models/accreditation.model';
+import {
+  AccreditationModel,
+  AccreditationPropertyModel,
+  AccreditationPropertyFetchingModel
+} from 'src/app/models/accreditation.model';
+import {
+  LoadAccreditationList,
+  LoadAccreditationListSuccess,
+  LoadAccreditationListFailure,
+  LoadAccreditationProperty,
+  LoadAccreditationPropertySuccess,
+  LoadAccreditationPropertyFailure
+} from '../actions/accreditation.action';
 
 export interface AccreditationState {
   // list
-  list: AccreditationModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: AccreditationModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: AccreditationPropertyModel,
-  propertiesFetching: AccreditationPropertyFetchingModel,
-  propertiesError: AccreditationPropertyModel
+  properties: AccreditationPropertyModel;
+  propertiesFetching: AccreditationPropertyFetchingModel;
+  propertiesError: AccreditationPropertyModel;
 }
 
 const initialState: AccreditationState = {
@@ -34,7 +45,7 @@ const initialState: AccreditationState = {
   }
 };
 
-const _accreditationReducer = createReducer(
+const accreditationReducer = createReducer(
   initialState,
 
   // list
@@ -94,10 +105,10 @@ const _accreditationReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function AccreditationReducer(state, action) {
-  return _accreditationReducer(state, action)
+  return accreditationReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

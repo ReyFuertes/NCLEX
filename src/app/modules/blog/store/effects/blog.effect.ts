@@ -20,11 +20,11 @@ export class BlogEffects {
             catchError(error =>
               of(LoadBlogListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

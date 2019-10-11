@@ -1,13 +1,17 @@
-import { LoadFigureList, LoadFigureListSuccess, LoadFigureListFailure } from '../actions/figure.action';
-import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
+import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { FigureModel } from 'src/app/models/figure.model';
+import {
+  LoadFigureList,
+  LoadFigureListSuccess,
+  LoadFigureListFailure
+} from '../actions/figure.action';
 
 export interface FigureState {
-  list: FigureModel[],
-  isFetchingList: boolean,
-  error: any
+  list: FigureModel[];
+  isFetchingList: boolean;
+  error: any;
 }
 
 const initialState: FigureState = {
@@ -16,7 +20,7 @@ const initialState: FigureState = {
   error: null
 };
 
-const _figureReducer = createReducer(
+const figureReducer = createReducer(
   initialState,
 
   on(
@@ -33,10 +37,10 @@ const _figureReducer = createReducer(
     LoadFigureListFailure,
     (state, action) => ({ ...state, isFetchingList: false, error: action.error })
   ),
-)
+);
 
 export function FigureReducer(state, action) {
-  return _figureReducer(state, action)
+  return figureReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

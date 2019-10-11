@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { PlanModel } from '../../models/plan.model';
 import { PlanService } from '../../services/plan.service';
-import { LoadPlanList, LoadPlanListSuccess, LoadPlanListFailure, LoadPlanProperty, LoadPlanPropertySuccess, LoadPlanPropertyFailure } from '../actions/plan.action';
+import {
+  LoadPlanList,
+  LoadPlanListSuccess,
+  LoadPlanListFailure,
+  LoadPlanProperty,
+  LoadPlanPropertySuccess,
+  LoadPlanPropertyFailure
+  } from '../actions/plan.action';
 
 @Injectable()
 export class PlanEffects {
@@ -21,11 +28,11 @@ export class PlanEffects {
             catchError(error =>
               of(LoadPlanListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadPlanProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class PlanEffects {
             catchError(propertyError =>
               of(LoadPlanPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

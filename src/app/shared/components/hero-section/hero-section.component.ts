@@ -9,7 +9,7 @@ import { HeroModel } from 'src/app/models/hero.model';
   ]
 })
 export class HeroSectionComponent implements OnInit {
-  @Input() readonly hero: HeroModel
+  @Input() readonly hero: HeroModel;
 
   constructor() { }
 

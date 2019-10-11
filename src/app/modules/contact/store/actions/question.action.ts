@@ -17,30 +17,30 @@ export enum QuestionActionTypes {
 export const LoadQuestionProperty = createAction(
   QuestionActionTypes.LoadQuestionProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadQuestionPropertySuccess = createAction(
   QuestionActionTypes.LoadQuestionPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadQuestionPropertyFailure = createAction(
   QuestionActionTypes.LoadQuestionPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);
 
 // form
 export const SubmitQuestionForm = createAction(
   QuestionActionTypes.SubmitQuestionForm,
   props<{ formData: QuestionFormModel }>()
-)
+);
 
 export const SubmitQuestionFormSuccess = createAction(
   QuestionActionTypes.SubmitQuestionFormSuccess,
   props<{ formResponse: any }>()
-)
+);
 
 export const SubmitQuestionFormFailure = createAction(
   QuestionActionTypes.SubmitQuestionFormFailure,
   props<{ formError: any }>()
-)
+);

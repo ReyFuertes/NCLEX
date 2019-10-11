@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadUniversityListSuccess, LoadUniversityList, LoadUniversityListFailure } from '../actions/university.action';
+import { of } from 'rxjs';
 import { UniversityService } from 'src/app/services/university.service';
 import { UniversityModel } from 'src/app/models/university.model';
-import { of } from 'rxjs';
+import { LoadUniversityListSuccess, LoadUniversityList, LoadUniversityListFailure } from '../actions/university.action';
 
 @Injectable()
 export class UniversityEffects {
@@ -20,11 +20,11 @@ export class UniversityEffects {
             catchError(error =>
               of(LoadUniversityListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { InnovationModel, InnovationPropertyModel, InnovationPropertyFetchingModel } from '../../models/innovation.model';
-import { LoadInnovationList, LoadInnovationListSuccess, LoadInnovationListFailure, LoadInnovationProperty, LoadInnovationPropertySuccess, LoadInnovationPropertyFailure } from '../actions/innovation.action';
+import {
+  LoadInnovationList,
+  LoadInnovationListSuccess,
+  LoadInnovationListFailure,
+  LoadInnovationProperty,
+  LoadInnovationPropertySuccess,
+  LoadInnovationPropertyFailure
+} from '../actions/innovation.action';
 
 export interface InnovationState {
   // list
-  list: InnovationModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: InnovationModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: InnovationPropertyModel,
-  propertiesFetching: InnovationPropertyFetchingModel,
-  propertiesError: InnovationPropertyModel
+  properties: InnovationPropertyModel;
+  propertiesFetching: InnovationPropertyFetchingModel;
+  propertiesError: InnovationPropertyModel;
 }
 
 const initialState: InnovationState = {
@@ -37,7 +44,7 @@ const initialState: InnovationState = {
   }
 };
 
-const _innovationReducer = createReducer(
+const innovationReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +104,10 @@ const _innovationReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function InnovationReducer(state, action) {
-  return _innovationReducer(state, action)
+  return innovationReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

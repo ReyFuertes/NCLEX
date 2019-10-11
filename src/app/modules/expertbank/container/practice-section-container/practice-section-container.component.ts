@@ -9,23 +9,23 @@ import { LoadPracticeProperty } from '../../store/actions/practice.action';
   templateUrl: './practice-section-container.component.html',
 })
 export class PracticeSectionContainerComponent implements OnInit {
-  title: Observable<string>
+  title: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.title = this.store.pipe(
       select(getPracticeProperty, { property: 'title' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getProperty('title')
+    this.getProperty('title');
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadPracticeProperty({ property }))
+    this.store.dispatch(LoadPracticeProperty({ property }));
   }
 
   handleClickPractice(): void {
-    alert('/pricing')
+    alert('/pricing');
   }
 }

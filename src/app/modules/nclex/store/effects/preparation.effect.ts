@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { PreparationModel } from '../../models/preparation.model';
 import { PreparationService } from '../../services/preparation.service';
-import { LoadPreparationListSuccess, LoadPreparationList, LoadPreparationListFailure, LoadPreparationPropertySuccess, LoadPreparationPropertyFailure, LoadPreparationProperty } from '../actions/preparation.action';
+import {
+  LoadPreparationListSuccess,
+  LoadPreparationList,
+  LoadPreparationListFailure,
+  LoadPreparationPropertySuccess,
+  LoadPreparationPropertyFailure,
+  LoadPreparationProperty
+} from '../actions/preparation.action';
 
 @Injectable()
 export class PreparationEffects {
@@ -21,11 +28,11 @@ export class PreparationEffects {
             catchError(error =>
               of(LoadPreparationListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadPreparationProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class PreparationEffects {
             catchError(propertyError =>
               of(LoadPreparationPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

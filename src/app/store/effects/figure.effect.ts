@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadFigureListSuccess, LoadFigureList, LoadFigureListFailure } from '../actions/figure.action';
+import { of } from 'rxjs';
 import { FigureService } from 'src/app/services/figure.service';
 import { FigureModel } from 'src/app/models/figure.model';
-import { of } from 'rxjs';
+import { LoadFigureListSuccess, LoadFigureList, LoadFigureListFailure } from '../actions/figure.action';
 
 @Injectable()
 export class FigureEffects {
@@ -20,11 +20,11 @@ export class FigureEffects {
             catchError(error =>
               of(LoadFigureListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

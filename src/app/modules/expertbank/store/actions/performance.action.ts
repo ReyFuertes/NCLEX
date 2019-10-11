@@ -11,14 +11,14 @@ export enum PerformanceActionTypes {
 export const LoadPerformanceProperty = createAction(
   PerformanceActionTypes.LoadPerformanceProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadPerformancePropertySuccess = createAction(
   PerformanceActionTypes.LoadPerformancePropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadPerformancePropertyFailure = createAction(
   PerformanceActionTypes.LoadPerformancePropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

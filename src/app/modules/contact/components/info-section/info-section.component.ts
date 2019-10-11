@@ -6,9 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./info-section.component.scss']
 })
 export class InfoSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() email: string
-  @Input() details: string
+  @Input() title: string;
+  @Input() email: string;
+  @Input() details: string;
 
   constructor() { }
 

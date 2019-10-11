@@ -1,19 +1,26 @@
-import { LoadNewsList, LoadNewsListSuccess, LoadNewsListFailure, LoadNewsProperty, LoadNewsPropertySuccess, LoadNewsPropertyFailure } from '../actions/news.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { NewsModel, NewsPropertyModel, NewsPropertyFetchingModel } from 'src/app/models/news.model';
+import {
+  LoadNewsList,
+  LoadNewsListSuccess,
+  LoadNewsListFailure,
+  LoadNewsProperty,
+  LoadNewsPropertySuccess,
+  LoadNewsPropertyFailure
+} from '../actions/news.action';
 
 export interface NewsState {
   // list
-  list: NewsModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: NewsModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: NewsPropertyModel,
-  propertiesFetching: NewsPropertyFetchingModel,
-  propertiesError: NewsPropertyModel
+  properties: NewsPropertyModel;
+  propertiesFetching: NewsPropertyFetchingModel;
+  propertiesError: NewsPropertyModel;
 }
 
 const initialState: NewsState = {
@@ -34,7 +41,7 @@ const initialState: NewsState = {
   }
 };
 
-const _newsReducer = createReducer(
+const newsReducer = createReducer(
   initialState,
 
   // list
@@ -94,10 +101,10 @@ const _newsReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function NewsReducer(state, action) {
-  return _newsReducer(state, action)
+  return newsReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

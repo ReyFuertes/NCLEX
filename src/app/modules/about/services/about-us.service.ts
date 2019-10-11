@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AboutUsService extends BaseService {
-  private url = '/assets/data/about-us.json'
+  private url = '/assets/data/about-us.json';
 
   getAboutUsList() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

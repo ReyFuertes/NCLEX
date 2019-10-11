@@ -7,7 +7,7 @@ import { AboutUsModel } from 'src/app/modules/about/models/about-us.model';
   styleUrls: ['./about-us-section.component.scss']
 })
 export class AboutUsSectionComponent implements OnInit {
-  @Input() aboutUsList: AboutUsModel[]
+  @Input() aboutUsList: AboutUsModel[];
 
   constructor() { }
 

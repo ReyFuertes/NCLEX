@@ -7,18 +7,18 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class InfoService extends BaseService {
-  private propertyUrl = '/assets/data/info.json'
-  private registerFormUrl = '/api/register'
+  private propertyUrl = '/assets/data/info.json';
+  private registerFormUrl = '/api/register';
 
   getProperty(property: string) {
     return this.get(this.propertyUrl)
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

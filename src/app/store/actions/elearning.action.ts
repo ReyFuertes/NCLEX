@@ -16,30 +16,30 @@ export enum ElearningActionTypes {
 // list
 export const LoadElearningList = createAction(
   ElearningActionTypes.LoadElearningList
-)
+);
 
 export const LoadElearningListSuccess = createAction(
   ElearningActionTypes.LoadElearningListSuccess,
   props<{ list: ElearningModel[] }>()
-)
+);
 
 export const LoadElearningListFailure = createAction(
   ElearningActionTypes.LoadElearningListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadElearningProperty = createAction(
   ElearningActionTypes.LoadElearningProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadElearningPropertySuccess = createAction(
   ElearningActionTypes.LoadElearningPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadElearningPropertyFailure = createAction(
   ElearningActionTypes.LoadElearningPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

@@ -1,11 +1,11 @@
 export interface SubscriptionFormModel {
-  email: string
+  email: string;
 }
 
 export interface SubscriptionPropertyModel {
-  title: string,
+  title: string;
 }
 
 export interface SubscriptionPropertyFetchingModel {
-  title: boolean,
+  title: boolean;
 }

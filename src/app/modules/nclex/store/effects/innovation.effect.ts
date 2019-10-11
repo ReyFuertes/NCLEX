@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { InnovationModel } from '../../models/innovation.model';
 import { InnovationService } from '../../services/innovation.service';
-import { LoadInnovationListSuccess, LoadInnovationList, LoadInnovationListFailure, LoadInnovationPropertySuccess, LoadInnovationPropertyFailure, LoadInnovationProperty } from '../actions/innovation.action';
+import {
+  LoadInnovationListSuccess,
+  LoadInnovationList,
+  LoadInnovationListFailure,
+  LoadInnovationPropertySuccess,
+  LoadInnovationPropertyFailure,
+  LoadInnovationProperty
+} from '../actions/innovation.action';
 
 @Injectable()
 export class InnovationEffects {
@@ -21,11 +28,11 @@ export class InnovationEffects {
             catchError(error =>
               of(LoadInnovationListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadInnovationProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class InnovationEffects {
             catchError(propertyError =>
               of(LoadInnovationPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

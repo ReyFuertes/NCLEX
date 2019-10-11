@@ -88,7 +88,7 @@ export class SidebarSectionComponent implements OnInit {
       name: 'Contact',
       sections: []
     }
-  ]
+  ];
 
   constructor() { }
 

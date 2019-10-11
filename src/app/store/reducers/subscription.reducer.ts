@@ -1,19 +1,29 @@
-import { LoadSubscriptionProperty, LoadSubscriptionPropertySuccess, LoadSubscriptionPropertyFailure, SubmitSubscriptionForm, SubmitSubscriptionFormSuccess, SubmitSubscriptionFormFailure } from '../actions/subscription.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { SubscriptionPropertyModel, SubscriptionPropertyFetchingModel, SubscriptionFormModel } from 'src/app/models/subscription-form.model';
+import {
+  SubscriptionPropertyModel,
+  SubscriptionPropertyFetchingModel,
+} from 'src/app/models/subscription-form.model';
+import {
+  LoadSubscriptionProperty,
+  LoadSubscriptionPropertySuccess,
+  LoadSubscriptionPropertyFailure,
+  SubmitSubscriptionForm,
+  SubmitSubscriptionFormSuccess,
+  SubmitSubscriptionFormFailure
+} from '../actions/subscription.action';
 
 export interface SubscriptionState {
   // property
-  properties: SubscriptionPropertyModel,
-  propertiesFetching: SubscriptionPropertyFetchingModel,
-  propertiesError: SubscriptionPropertyModel,
+  properties: SubscriptionPropertyModel;
+  propertiesFetching: SubscriptionPropertyFetchingModel;
+  propertiesError: SubscriptionPropertyModel;
 
   // form
-  formSubmitting: boolean,
-  formResponse: any,
-  formError: any
+  formSubmitting: boolean;
+  formResponse: any;
+  formError: any;
 }
 
 const initialState: SubscriptionState = {
@@ -34,7 +44,7 @@ const initialState: SubscriptionState = {
   formError: null
 };
 
-const _subscriptionReducer = createReducer(
+const subscriptionReducer = createReducer(
   initialState,
 
   // property
@@ -106,10 +116,10 @@ const _subscriptionReducer = createReducer(
       formError: action.formError
     })
   ),
-)
+);
 
 export function SubscriptionReducer(state, action) {
-  return _subscriptionReducer(state, action)
+  return subscriptionReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

@@ -3,13 +3,7 @@ import { MetaReducer } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
 
-export interface HomeState {
-}
-
-const initialState: HomeState = {
-};
-
-export function HomeReducer(state: HomeState = initialState, action: HomeActions): HomeState {
+export function HomeReducer(state: {}, action: HomeActions): {} {
   switch (action.type) {
     default:
       return state;

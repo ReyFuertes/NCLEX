@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { BenefitModel, BenefitPropertyModel, BenefitPropertyFetchingModel } from '../../models/benefit.model';
-import { LoadBenefitList, LoadBenefitListSuccess, LoadBenefitListFailure, LoadBenefitProperty, LoadBenefitPropertySuccess, LoadBenefitPropertyFailure } from '../actions/benefit.action';
+import {
+  LoadBenefitList,
+  LoadBenefitListSuccess,
+  LoadBenefitListFailure,
+  LoadBenefitProperty,
+  LoadBenefitPropertySuccess,
+  LoadBenefitPropertyFailure
+} from '../actions/benefit.action';
 
 export interface BenefitState {
   // list
-  list: BenefitModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: BenefitModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: BenefitPropertyModel,
-  propertiesFetching: BenefitPropertyFetchingModel,
-  propertiesError: BenefitPropertyModel
+  properties: BenefitPropertyModel;
+  propertiesFetching: BenefitPropertyFetchingModel;
+  propertiesError: BenefitPropertyModel;
 }
 
 const initialState: BenefitState = {
@@ -37,7 +44,7 @@ const initialState: BenefitState = {
   }
 };
 
-const _benefitReducer = createReducer(
+const benefitReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +104,10 @@ const _benefitReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function BenefitReducer(state, action) {
-  return _benefitReducer(state, action)
+  return benefitReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadExpertbankListSuccess, LoadExpertbankList, LoadExpertbankListFailure, LoadExpertbankPropertySuccess, LoadExpertbankPropertyFailure, LoadExpertbankProperty } from '../actions/expertbank.action';
+import { of } from 'rxjs';
 import { ExpertbankService } from 'src/app/services/expertbank.service';
 import { ExpertbankModel } from 'src/app/models/expertbank.model';
-import { of } from 'rxjs';
+import {
+  LoadExpertbankListSuccess,
+  LoadExpertbankList,
+  LoadExpertbankListFailure,
+  LoadExpertbankPropertySuccess,
+  LoadExpertbankPropertyFailure,
+  LoadExpertbankProperty
+} from '../actions/expertbank.action';
 
 @Injectable()
 export class ExpertbankEffects {
@@ -21,11 +28,11 @@ export class ExpertbankEffects {
             catchError(error =>
               of(LoadExpertbankListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadExpertbankProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class ExpertbankEffects {
             catchError(propertyError =>
               of(LoadExpertbankPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

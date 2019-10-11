@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadSubscriptionPropertySuccess, LoadSubscriptionPropertyFailure, LoadSubscriptionProperty, SubmitSubscriptionForm, SubmitSubscriptionFormSuccess, SubmitSubscriptionFormFailure } from '../actions/subscription.action';
-import { SubscriptionService } from 'src/app/services/subscription.service';
 import { of } from 'rxjs';
+import { SubscriptionService } from 'src/app/services/subscription.service';
+import {
+  LoadSubscriptionPropertySuccess,
+  LoadSubscriptionPropertyFailure,
+  LoadSubscriptionProperty,
+  SubmitSubscriptionForm,
+  SubmitSubscriptionFormSuccess,
+  SubmitSubscriptionFormFailure
+} from '../actions/subscription.action';
 
 @Injectable()
 export class SubscriptionEffects {
@@ -20,11 +27,11 @@ export class SubscriptionEffects {
             catchError(propertyError =>
               of(LoadSubscriptionPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // form
   submitSubscriptionForm$ = createEffect(
@@ -39,11 +46,11 @@ export class SubscriptionEffects {
             catchError(formError =>
               of(SubmitSubscriptionFormFailure({ formError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

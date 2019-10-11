@@ -6,31 +6,34 @@ import { LoadPerformanceProperty, LoadPerformancePropertySuccess, LoadPerformanc
 
 export interface PerformanceState {
   // property
-  properties: PerformancePropertyModel,
-  propertiesFetching: PerformancePropertyFetchingModel,
-  propertiesError: PerformancePropertyModel
+  properties: PerformancePropertyModel;
+  propertiesFetching: PerformancePropertyFetchingModel;
+  propertiesError: PerformancePropertyModel;
 }
 
 const initialState: PerformanceState = {
   // property
   properties: {
     title: '',
-    imageUrl: '',
+    imageUrlFront: '',
+    imageUrlBack: '',
     description: ''
   },
   propertiesFetching: {
     title: false,
-    imageUrl: false,
+    imageUrlFront: false,
+    imageUrlBack: false,
     description: false
   },
   propertiesError: {
     title: '',
-    imageUrl: '',
+    imageUrlFront: '',
+    imageUrlBack: '',
     description: ''
   }
 };
 
-const _performanceReducer = createReducer(
+const performanceReducer = createReducer(
   initialState,
 
   // property
@@ -74,10 +77,10 @@ const _performanceReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function PerformanceReducer(state, action) {
-  return _performanceReducer(state, action)
+  return performanceReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
   templateUrl: './expertbank-section-container.component.html',
 })
 export class ExpertbankSectionContainerComponent implements OnInit {
-  expertbanks: Observable<ExpertbankModel[]>
-  title: Observable<string>
-  buttonText: Observable<string>
+  expertbanks: Observable<ExpertbankModel[]>;
+  title: Observable<string>;
+  buttonText: Observable<string>;
 
   constructor(
     private store: Store<any>,
@@ -21,31 +21,31 @@ export class ExpertbankSectionContainerComponent implements OnInit {
   ) {
     this.expertbanks = this.store.pipe(
       select(getExpertbankList)
-    )
+    );
     this.title = this.store.pipe(
       select(getExpertbankProperty, { property: 'title' })
-    )
+    );
     this.buttonText = this.store.pipe(
       select(getExpertbankProperty, { property: 'buttonText' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
-    this.getProperty('buttonText')
+    this.getList();
+    this.getProperty('title');
+    this.getProperty('buttonText');
   }
 
   getList() {
-    this.store.dispatch(LoadExpertbankList())
+    this.store.dispatch(LoadExpertbankList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadExpertbankProperty({ property }))
+    this.store.dispatch(LoadExpertbankProperty({ property }));
   }
 
   navigateToExpertBanks() {
-    console.log('@@@')
-    this.router.navigate(['/expertbanks'])
+    console.log('@@@');
+    this.router.navigate(['/expertbanks']);
   }
 }

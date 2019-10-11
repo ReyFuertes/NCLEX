@@ -10,39 +10,39 @@ import { LoadInnovationList, LoadInnovationProperty } from '../../store/actions/
   templateUrl: './innovation-section-container.component.html',
 })
 export class InnovationSectionContainerComponent implements OnInit {
-  innovations: Observable<InnovationModel[]>
-  title: Observable<string>
-  subtitle: Observable<string>
-  imageUrl: Observable<string>
+  innovations: Observable<InnovationModel[]>;
+  title: Observable<string>;
+  subtitle: Observable<string>;
+  imageUrl: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.innovations = this.store.pipe(
       select(getInnovationList)
-    )
+    );
     this.title = this.store.pipe(
       select(getInnovationProperty, { property: 'title' })
-    )
+    );
     this.subtitle = this.store.pipe(
       select(getInnovationProperty, { property: 'subtitle' })
-    )
+    );
     this.imageUrl = this.store.pipe(
       select(getInnovationProperty, { property: 'imageUrl' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
-    this.getProperty('subtitle')
-    this.getProperty('imageUrl')
+    this.getList();
+    this.getProperty('title');
+    this.getProperty('subtitle');
+    this.getProperty('imageUrl');
   }
 
   getList() {
-    this.store.dispatch(LoadInnovationList())
+    this.store.dispatch(LoadInnovationList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadInnovationProperty({ property }))
+    this.store.dispatch(LoadInnovationProperty({ property }));
   }
 }
 

@@ -16,30 +16,30 @@ export enum InnovationActionTypes {
 // list
 export const LoadInnovationList = createAction(
   InnovationActionTypes.LoadInnovationList
-)
+);
 
 export const LoadInnovationListSuccess = createAction(
   InnovationActionTypes.LoadInnovationListSuccess,
   props<{ list: InnovationModel[] }>()
-)
+);
 
 export const LoadInnovationListFailure = createAction(
   InnovationActionTypes.LoadInnovationListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadInnovationProperty = createAction(
   InnovationActionTypes.LoadInnovationProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadInnovationPropertySuccess = createAction(
   InnovationActionTypes.LoadInnovationPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadInnovationPropertyFailure = createAction(
   InnovationActionTypes.LoadInnovationPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

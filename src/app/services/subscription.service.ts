@@ -6,26 +6,26 @@ import { SubscriptionFormModel } from '../models/subscription-form.model';
 
 @Injectable()
 export class SubscriptionService extends BaseService {
-  private propertyUrl = '/assets/data/subscription.json'
-  private registerFormUrl = '/api/register'
+  private propertyUrl = '/assets/data/subscription.json';
+  private registerFormUrl = '/api/register';
 
   getProperty(property: string) {
     return this.get(this.propertyUrl)
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
   submitSubscriptionForm(formData: SubscriptionFormModel) {
-    console.log('@TODO: Implement API:', JSON.stringify(formData, null, 2))
+    console.log('@TODO: Implement API:', JSON.stringify(formData, null, 2));
     return this.post(this.registerFormUrl, formData)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

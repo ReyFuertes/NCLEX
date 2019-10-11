@@ -8,7 +8,7 @@ export class AuthenticationService {
   constructor() { }
 
   public get loggedInUser() {
-    return JSON.parse(localStorage.getItem('currentUser'))
+    return JSON.parse(localStorage.getItem('currentUser'));
   }
 
   login(credentials: LoginFormModel) {
@@ -16,6 +16,6 @@ export class AuthenticationService {
   }
 
   logout() {
-    localStorage.removeItem('currentUser')
+    localStorage.removeItem('currentUser');
   }
 }

@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogContainerComponent } from './container/blog-container/blog-container.component';
 import { BlogSectionComponent } from './components/blog-section/blog-section.component';
 import { BlogService } from './services/blog.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogSectionContainerComponent } from './container/blog-section-container/blog-section-container.component';
 
 /**
@@ -19,7 +19,7 @@ const primeNgModules = [];
 
 const bootstrapModules = [
   NgbModule
-]
+];
 
 const routes: Routes = [
   {

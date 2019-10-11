@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { AdvantageModel } from '../../models/advantage.model';
 import { AdvantageService } from '../../services/advantage.service';
-import { LoadAdvantageListSuccess, LoadAdvantageList, LoadAdvantageListFailure, LoadAdvantagePropertySuccess, LoadAdvantagePropertyFailure, LoadAdvantageProperty } from '../actions/advantage.action';
+import {
+  LoadAdvantageListSuccess,
+  LoadAdvantageList,
+  LoadAdvantageListFailure,
+  LoadAdvantagePropertySuccess,
+  LoadAdvantagePropertyFailure,
+  LoadAdvantageProperty
+} from '../actions/advantage.action';
 
 @Injectable()
 export class AdvantageEffects {
@@ -21,11 +28,11 @@ export class AdvantageEffects {
             catchError(error =>
               of(LoadAdvantageListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadAdvantageProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class AdvantageEffects {
             catchError(propertyError =>
               of(LoadAdvantagePropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

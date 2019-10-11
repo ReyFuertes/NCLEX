@@ -1,19 +1,31 @@
-import { LoadElearningList, LoadElearningListSuccess, LoadElearningListFailure, LoadElearningProperty, LoadElearningPropertySuccess, LoadElearningPropertyFailure } from '../actions/elearning.action';
+
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { ElearningModel, ElearningPropertyModel, ElearningPropertyFetchingModel } from 'src/app/models/elearning.model';
+import {
+  ElearningModel,
+  ElearningPropertyModel,
+  ElearningPropertyFetchingModel
+} from 'src/app/models/elearning.model';
+import {
+  LoadElearningList,
+  LoadElearningListSuccess,
+  LoadElearningListFailure,
+  LoadElearningProperty,
+  LoadElearningPropertySuccess,
+  LoadElearningPropertyFailure
+} from '../actions/elearning.action';
 
 export interface ElearningState {
   // list
-  list: ElearningModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: ElearningModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: ElearningPropertyModel,
-  propertiesFetching: ElearningPropertyFetchingModel,
-  propertiesError: ElearningPropertyModel
+  properties: ElearningPropertyModel;
+  propertiesFetching: ElearningPropertyFetchingModel;
+  propertiesError: ElearningPropertyModel;
 }
 
 const initialState: ElearningState = {
@@ -37,7 +49,7 @@ const initialState: ElearningState = {
   }
 };
 
-const _elearningReducer = createReducer(
+const elearningReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +109,10 @@ const _elearningReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function ElearningReducer(state, action) {
-  return _elearningReducer(state, action)
+  return elearningReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

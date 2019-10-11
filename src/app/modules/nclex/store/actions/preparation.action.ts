@@ -16,30 +16,30 @@ export enum PreparationActionTypes {
 // list
 export const LoadPreparationList = createAction(
   PreparationActionTypes.LoadPreparationList
-)
+);
 
 export const LoadPreparationListSuccess = createAction(
   PreparationActionTypes.LoadPreparationListSuccess,
   props<{ list: PreparationModel[] }>()
-)
+);
 
 export const LoadPreparationListFailure = createAction(
   PreparationActionTypes.LoadPreparationListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadPreparationProperty = createAction(
   PreparationActionTypes.LoadPreparationProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadPreparationPropertySuccess = createAction(
   PreparationActionTypes.LoadPreparationPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadPreparationPropertyFailure = createAction(
   PreparationActionTypes.LoadPreparationPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { PlanModel, PlanPropertyModel, PlanPropertyFetchingModel } from '../../models/plan.model';
-import { LoadPlanList, LoadPlanListSuccess, LoadPlanListFailure, LoadPlanProperty, LoadPlanPropertySuccess, LoadPlanPropertyFailure } from '../actions/plan.action';
+import {
+  LoadPlanList,
+  LoadPlanListSuccess,
+  LoadPlanListFailure,
+  LoadPlanProperty,
+  LoadPlanPropertySuccess,
+  LoadPlanPropertyFailure
+} from '../actions/plan.action';
 
 export interface PlanState {
   // list
-  list: PlanModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: PlanModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: PlanPropertyModel,
-  propertiesFetching: PlanPropertyFetchingModel,
-  propertiesError: PlanPropertyModel
+  properties: PlanPropertyModel;
+  propertiesFetching: PlanPropertyFetchingModel;
+  propertiesError: PlanPropertyModel;
 }
 
 const initialState: PlanState = {
@@ -43,7 +50,7 @@ const initialState: PlanState = {
   }
 };
 
-const _planReducer = createReducer(
+const planReducer = createReducer(
   initialState,
 
   // list
@@ -103,10 +110,10 @@ const _planReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function PlanReducer(state, action) {
-  return _planReducer(state, action)
+  return planReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

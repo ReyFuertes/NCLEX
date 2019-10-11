@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { LoadHero, LoadHeroSuccess, LoadHeroFailure, PreviewHero, PreviewHeroSuccess } from '../actions/hero.action';
 import { HeroService } from 'src/app/services/hero.service';
 import { HeroModel } from 'src/app/models/hero.model';
 import { PostMessageService } from 'src/app/services/post-message.service';
+import { LoadHero, LoadHeroSuccess, LoadHeroFailure, PreviewHero, PreviewHeroSuccess } from '../actions/hero.action';
 import { SendPostMessageSuccess, SendPostMessageFailure } from '../actions/post-message.action';
 
 @Injectable()
@@ -22,11 +22,11 @@ export class HeroEffects {
             catchError(error =>
               of(LoadHeroFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // admin
   previewHero$ = createEffect(
@@ -39,11 +39,11 @@ export class HeroEffects {
             catchError(error =>
               of(SendPostMessageFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

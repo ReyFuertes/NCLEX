@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadInstitutionListSuccess, LoadInstitutionList, LoadInstitutionListFailure } from '../actions/institution.action';
+import { of } from 'rxjs';
 import { InstitutionService } from 'src/app/services/institution.service';
 import { InstitutionModel } from 'src/app/models/institution.model';
-import { of } from 'rxjs';
+import { LoadInstitutionListSuccess, LoadInstitutionList, LoadInstitutionListFailure } from '../actions/institution.action';
 
 @Injectable()
 export class InstitutionEffects {
@@ -20,11 +20,11 @@ export class InstitutionEffects {
             catchError(error =>
               of(LoadInstitutionListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

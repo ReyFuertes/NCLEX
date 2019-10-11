@@ -16,30 +16,30 @@ export enum FeatureActionTypes {
 // list
 export const LoadFeatureList = createAction(
   FeatureActionTypes.LoadFeatureList
-)
+);
 
 export const LoadFeatureListSuccess = createAction(
   FeatureActionTypes.LoadFeatureListSuccess,
   props<{ list: FeatureModel[] }>()
-)
+);
 
 export const LoadFeatureListFailure = createAction(
   FeatureActionTypes.LoadFeatureListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadFeatureProperty = createAction(
   FeatureActionTypes.LoadFeatureProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadFeaturePropertySuccess = createAction(
   FeatureActionTypes.LoadFeaturePropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadFeaturePropertyFailure = createAction(
   FeatureActionTypes.LoadFeaturePropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

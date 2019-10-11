@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { WorkModel, WorkPropertyModel, WorkPropertyFetchingModel } from '../../models/work.model';
-import { LoadWorkList, LoadWorkListSuccess, LoadWorkListFailure, LoadWorkProperty, LoadWorkPropertySuccess, LoadWorkPropertyFailure } from '../actions/work.action';
+import {
+  LoadWorkList,
+  LoadWorkListSuccess,
+  LoadWorkListFailure,
+  LoadWorkProperty,
+  LoadWorkPropertySuccess,
+  LoadWorkPropertyFailure
+} from '../actions/work.action';
 
 export interface WorkState {
   // list
-  list: WorkModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: WorkModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: WorkPropertyModel,
-  propertiesFetching: WorkPropertyFetchingModel,
-  propertiesError: WorkPropertyModel
+  properties: WorkPropertyModel;
+  propertiesFetching: WorkPropertyFetchingModel;
+  propertiesError: WorkPropertyModel;
 }
 
 const initialState: WorkState = {
@@ -37,7 +44,7 @@ const initialState: WorkState = {
   }
 };
 
-const _workReducer = createReducer(
+const workReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +104,10 @@ const _workReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function WorkReducer(state, action) {
-  return _workReducer(state, action)
+  return workReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

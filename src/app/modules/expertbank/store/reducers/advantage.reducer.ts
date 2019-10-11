@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { AdvantageModel, AdvantagePropertyModel, AdvantagePropertyFetchingModel } from '../../models/advantage.model';
-import { LoadAdvantageList, LoadAdvantageListSuccess, LoadAdvantageListFailure, LoadAdvantageProperty, LoadAdvantagePropertySuccess, LoadAdvantagePropertyFailure } from '../actions/advantage.action';
+import {
+  LoadAdvantageList,
+  LoadAdvantageListSuccess,
+  LoadAdvantageListFailure,
+  LoadAdvantageProperty,
+  LoadAdvantagePropertySuccess,
+  LoadAdvantagePropertyFailure
+} from '../actions/advantage.action';
 
 export interface AdvantageState {
   // list
-  list: AdvantageModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: AdvantageModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: AdvantagePropertyModel,
-  propertiesFetching: AdvantagePropertyFetchingModel,
-  propertiesError: AdvantagePropertyModel
+  properties: AdvantagePropertyModel;
+  propertiesFetching: AdvantagePropertyFetchingModel;
+  propertiesError: AdvantagePropertyModel;
 }
 
 const initialState: AdvantageState = {
@@ -34,7 +41,7 @@ const initialState: AdvantageState = {
   }
 };
 
-const _advantageReducer = createReducer(
+const advantageReducer = createReducer(
   initialState,
 
   // list
@@ -94,10 +101,10 @@ const _advantageReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function AdvantageReducer(state, action) {
-  return _advantageReducer(state, action)
+  return advantageReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

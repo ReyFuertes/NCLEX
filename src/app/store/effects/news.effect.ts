@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadNewsListSuccess, LoadNewsList, LoadNewsListFailure, LoadNewsPropertySuccess, LoadNewsPropertyFailure, LoadNewsProperty } from '../actions/news.action';
+import { of } from 'rxjs';
 import { NewsService } from 'src/app/services/news.service';
 import { NewsModel } from 'src/app/models/news.model';
-import { of } from 'rxjs';
+import { LoadNewsListSuccess,
+  LoadNewsList,
+  LoadNewsListFailure,
+  LoadNewsPropertySuccess,
+  LoadNewsPropertyFailure,
+  LoadNewsProperty
+} from '../actions/news.action';
 
 @Injectable()
 export class NewsEffects {
@@ -21,11 +27,11 @@ export class NewsEffects {
             catchError(error =>
               of(LoadNewsListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadNewsProperty$ = createEffect(
@@ -40,11 +46,11 @@ export class NewsEffects {
             catchError(propertyError =>
               of(LoadNewsPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadRegistrationPropertySuccess, LoadRegistrationPropertyFailure, LoadRegistrationProperty, SubmitRegistrationForm, SubmitRegistrationFormSuccess, SubmitRegistrationFormFailure } from '../actions/registration.action';
-import { RegistrationService } from 'src/app/services/registration.service';
 import { of } from 'rxjs';
+import { RegistrationService } from 'src/app/services/registration.service';
+import {
+  LoadRegistrationPropertySuccess,
+  LoadRegistrationPropertyFailure,
+  LoadRegistrationProperty,
+  SubmitRegistrationForm,
+  SubmitRegistrationFormSuccess,
+  SubmitRegistrationFormFailure
+} from '../actions/registration.action';
 
 @Injectable()
 export class RegistrationEffects {
@@ -20,11 +27,11 @@ export class RegistrationEffects {
             catchError(propertyError =>
               of(LoadRegistrationPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // form
   submitRegistrationForm$ = createEffect(
@@ -39,11 +46,11 @@ export class RegistrationEffects {
             catchError(formError =>
               of(SubmitRegistrationFormFailure({ formError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

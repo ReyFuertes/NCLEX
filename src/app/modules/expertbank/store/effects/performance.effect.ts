@@ -3,7 +3,11 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { PerformanceService } from '../../services/performance.service';
-import { LoadPerformancePropertySuccess, LoadPerformancePropertyFailure, LoadPerformanceProperty } from '../actions/performance.action';
+import {
+  LoadPerformancePropertySuccess,
+  LoadPerformancePropertyFailure,
+  LoadPerformanceProperty
+} from '../actions/performance.action';
 
 @Injectable()
 export class PerformanceEffects {
@@ -20,11 +24,11 @@ export class PerformanceEffects {
             catchError(propertyError =>
               of(LoadPerformancePropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

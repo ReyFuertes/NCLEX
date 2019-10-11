@@ -20,11 +20,11 @@ export class InfoEffects {
             catchError(propertyError =>
               of(LoadInfoPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

@@ -16,30 +16,30 @@ export enum ExpertbankActionTypes {
 // list
 export const LoadExpertbankList = createAction(
   ExpertbankActionTypes.LoadExpertbankList
-)
+);
 
 export const LoadExpertbankListSuccess = createAction(
   ExpertbankActionTypes.LoadExpertbankListSuccess,
   props<{ list: ExpertbankModel[] }>()
-)
+);
 
 export const LoadExpertbankListFailure = createAction(
   ExpertbankActionTypes.LoadExpertbankListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadExpertbankProperty = createAction(
   ExpertbankActionTypes.LoadExpertbankProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadExpertbankPropertySuccess = createAction(
   ExpertbankActionTypes.LoadExpertbankPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadExpertbankPropertyFailure = createAction(
   ExpertbankActionTypes.LoadExpertbankPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

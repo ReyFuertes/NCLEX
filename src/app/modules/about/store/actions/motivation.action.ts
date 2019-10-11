@@ -9,14 +9,14 @@ export enum MotivationActionTypes {
 
 export const LoadMotivationList = createAction(
   MotivationActionTypes.LoadMotivationList
-)
+);
 
 export const LoadMotivationListSuccess = createAction(
   MotivationActionTypes.LoadMotivationListSuccess,
   props<{ list: MotivationModel[] }>()
-)
+);
 
 export const LoadMotivationListFailure = createAction(
   MotivationActionTypes.LoadMotivationListFailure,
   props<{ error: any }>()
-)
+);

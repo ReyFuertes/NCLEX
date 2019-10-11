@@ -10,9 +10,9 @@ import { LoadHero, PreviewHero } from 'src/app/store/actions/hero.action';
   templateUrl: './hero-section-details-container.component.html',
 })
 export class HeroSectionDetailsContainerComponent implements OnInit {
-  page: string = 'home'
+  page = 'home';
 
-  hero: Observable<HeroModel>
+  hero: Observable<HeroModel>;
 
   constructor(
     private store: Store<any>
@@ -21,11 +21,11 @@ export class HeroSectionDetailsContainerComponent implements OnInit {
   ngOnInit() {
     this.hero = this.store.pipe(
       select(getHeroByPage, { page: this.page })
-    )
+    );
 
     this.store.dispatch(
       LoadHero({ page: this.page })
-    )
+    );
   }
 
   handleChange(updates) {
@@ -34,6 +34,6 @@ export class HeroSectionDetailsContainerComponent implements OnInit {
         page: this.page,
         hero: updates
       })
-    )
+    );
   }
 }

@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'NCLEX-RN';
-  private postMessageType = 'NCLEX_ADMIN'
 
   constructor(private store: Store<any>) {
   }
@@ -18,19 +17,19 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.subscribeToPostMessage()
+    this.subscribeToPostMessage();
   }
 
   isTrustedSource({ origin, data }): boolean {
-    return origin === window.origin && data && data.messageSecret === environment.messageSecret
+    return origin === window.origin && data && data.messageSecret === environment.messageSecret;
   }
 
   subscribeToPostMessage(): void {
     window.addEventListener('message', (event) => {
       if (this.isTrustedSource(event)) {
-        console.log('@message', event.data)
-        this.store.dispatch(event.data.action)
+        console.log('@message', event.data);
+        this.store.dispatch(event.data.action);
       }
-    })
+    });
   }
 }

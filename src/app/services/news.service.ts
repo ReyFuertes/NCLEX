@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class NewsService extends BaseService {
-  private url = '/assets/data/news.json'
-  private propertyUrl = '/assets/data/new.json'
+  private url = '/assets/data/news.json';
+  private propertyUrl = '/assets/data/new.json';
 
   getNews() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
   getProperty(property: string) {
@@ -21,10 +21,10 @@ export class NewsService extends BaseService {
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

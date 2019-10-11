@@ -9,14 +9,14 @@ export enum FigureActionTypes {
 
 export const LoadFigureList = createAction(
   FigureActionTypes.LoadFigureList
-)
+);
 
 export const LoadFigureListSuccess = createAction(
   FigureActionTypes.LoadFigureListSuccess,
   props<{ list: FigureModel[] }>()
-)
+);
 
 export const LoadFigureListFailure = createAction(
   FigureActionTypes.LoadFigureListFailure,
   props<{ error: any }>()
-)
+);

@@ -1,19 +1,30 @@
-import { LoadExpertbankList, LoadExpertbankListSuccess, LoadExpertbankListFailure, LoadExpertbankProperty, LoadExpertbankPropertySuccess, LoadExpertbankPropertyFailure } from '../actions/expertbank.action';
 import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { ExpertbankModel, ExpertbankPropertyModel, ExpertbankPropertyFetchingModel } from 'src/app/models/expertbank.model';
+import {
+  ExpertbankModel,
+  ExpertbankPropertyModel,
+  ExpertbankPropertyFetchingModel
+} from 'src/app/models/expertbank.model';
+import {
+  LoadExpertbankList,
+  LoadExpertbankListSuccess,
+  LoadExpertbankListFailure,
+  LoadExpertbankProperty,
+  LoadExpertbankPropertySuccess,
+  LoadExpertbankPropertyFailure
+} from '../actions/expertbank.action';
 
 export interface ExpertbankState {
   // list
-  list: ExpertbankModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: ExpertbankModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: ExpertbankPropertyModel,
-  propertiesFetching: ExpertbankPropertyFetchingModel,
-  propertiesError: ExpertbankPropertyModel
+  properties: ExpertbankPropertyModel;
+  propertiesFetching: ExpertbankPropertyFetchingModel;
+  propertiesError: ExpertbankPropertyModel;
 }
 
 const initialState: ExpertbankState = {
@@ -37,7 +48,7 @@ const initialState: ExpertbankState = {
   }
 };
 
-const _expertbankReducer = createReducer(
+const expertbankReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +108,10 @@ const _expertbankReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function ExpertbankReducer(state, action) {
-  return _expertbankReducer(state, action)
+  return expertbankReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

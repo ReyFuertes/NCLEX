@@ -7,9 +7,9 @@ import { WorkModel } from '../../models/work.model';
   styleUrls: ['./work-section.component.scss']
 })
 export class WorkSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() subtitle: string
-  @Input() works: WorkModel[]
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() works: WorkModel[];
 
   constructor() { }
 

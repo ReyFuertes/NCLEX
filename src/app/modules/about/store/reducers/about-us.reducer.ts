@@ -5,9 +5,9 @@ import { AboutUsModel } from '../../models/about-us.model';
 import { LoadAboutUsList, LoadAboutUsListSuccess, LoadAboutUsListFailure } from '../actions/about-us.action';
 
 export interface AboutUsState {
-  list: AboutUsModel[],
-  isFetchingList: boolean,
-  error: any
+  list: AboutUsModel[];
+  isFetchingList: boolean;
+  error: any;
 }
 
 const initialState: AboutUsState = {
@@ -16,7 +16,7 @@ const initialState: AboutUsState = {
   error: null
 };
 
-const _aboutUsReducer = createReducer(
+const aboutUsReducer = createReducer(
   initialState,
 
   on(
@@ -33,10 +33,10 @@ const _aboutUsReducer = createReducer(
     LoadAboutUsListFailure,
     (state, action) => ({ ...state, isFetchingList: false, error: action.error })
   ),
-)
+);
 
 export function AboutUsReducer(state, action) {
-  return _aboutUsReducer(state, action)
+  return aboutUsReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

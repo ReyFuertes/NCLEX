@@ -14,21 +14,21 @@ export enum BlogActionTypes {
 // list
 export const LoadBlogList = createAction(
   BlogActionTypes.LoadBlogList
-)
+);
 
 export const LoadBlogListSuccess = createAction(
   BlogActionTypes.LoadBlogListSuccess,
   props<{ list: BlogModel[] }>()
-)
+);
 
 export const LoadBlogListFailure = createAction(
   BlogActionTypes.LoadBlogListFailure,
   props<{ error: any }>()
-)
+);
 
 
 // pagination
 export const PaginateBlogList = createAction(
   BlogActionTypes.PaginateBlogList,
   props<{ pagination: PaginateBlogModel }>()
-)
+);

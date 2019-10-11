@@ -7,9 +7,9 @@ import { PreparationModel } from '../../models/preparation.model';
   styleUrls: ['./preparation-section.component.scss']
 })
 export class PreparationSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() imageUrl: string
-  @Input() preparations: PreparationModel[]
+  @Input() title: string;
+  @Input() imageUrl: string;
+  @Input() preparations: PreparationModel[];
 
   constructor() { }
 

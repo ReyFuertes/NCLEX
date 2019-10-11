@@ -1,10 +1,10 @@
 export interface FaqModel {
-  id: string,
-  question: string,
-  answer: string,
-  category: string
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
 }
 
 export interface FaqGroupedByCategoryModel {
-  [key: string]: FaqModel[]
+  [key: string]: FaqModel[];
 }

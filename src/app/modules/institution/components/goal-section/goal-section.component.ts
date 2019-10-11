@@ -7,10 +7,10 @@ import { GoalModel } from '../../models/goal.model';
   styleUrls: ['./goal-section.component.scss']
 })
 export class GoalSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() avatarUrl: string
-  @Input() checkIconUrl: string
-  @Input() goals: GoalModel[]
+  @Input() title: string;
+  @Input() avatarUrl: string;
+  @Input() checkIconUrl: string;
+  @Input() goals: GoalModel[];
 
   constructor() { }
 

@@ -10,28 +10,28 @@ import { LoadTestimonialList, LoadTestimonialProperty } from 'src/app/store/acti
   templateUrl: './testimonial-section-container.component.html',
 })
 export class TestimonialSectionContainerComponent implements OnInit {
-  testimonials: Observable<TestimonialModel[]>
-  title: Observable<string>
+  testimonials: Observable<TestimonialModel[]>;
+  title: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.testimonials = this.store.pipe(
       select(getTestimonialList)
-    )
+    );
     this.title = this.store.pipe(
       select(getTestimonialProperty, { property: 'title' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
+    this.getList();
+    this.getProperty('title');
   }
 
   getList() {
-    this.store.dispatch(LoadTestimonialList())
+    this.store.dispatch(LoadTestimonialList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadTestimonialProperty({ property }))
+    this.store.dispatch(LoadTestimonialProperty({ property }));
   }
 }

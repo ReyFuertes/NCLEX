@@ -5,14 +5,14 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AccreditationService extends BaseService {
-  private url = '/assets/data/accreditations.json'
-  private propertyUrl = '/assets/data/accreditation.json'
+  private url = '/assets/data/accreditations.json';
+  private propertyUrl = '/assets/data/accreditation.json';
 
   getAccreditations() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
   getProperty(property: string) {
@@ -20,10 +20,10 @@ export class AccreditationService extends BaseService {
       .pipe(
         map((data) => data[property]),
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

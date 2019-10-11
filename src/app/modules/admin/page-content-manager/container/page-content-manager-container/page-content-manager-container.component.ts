@@ -10,7 +10,7 @@ export class PageContentManagerContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }

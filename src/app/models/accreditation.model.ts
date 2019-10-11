@@ -1,12 +1,12 @@
 export interface AccreditationModel {
-  id: string,
-  imageUrl: string
+  id: string;
+  imageUrl: string;
 }
 
 export interface AccreditationPropertyModel {
-  title: string
+  title: string;
 }
 
 export interface AccreditationPropertyFetchingModel {
-  title: boolean
+  title: boolean;
 }

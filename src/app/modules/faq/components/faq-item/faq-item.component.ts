@@ -7,9 +7,9 @@ import { FaqModel } from '../../models/faq.model';
   styleUrls: ['./faq-item.component.scss']
 })
 export class FaqItemComponent implements OnInit {
-  @Input() faqItem: FaqModel
+  @Input() faqItem: FaqModel;
 
-  showAnswer: boolean = false
+  showAnswer = false;
 
   constructor() { }
 
@@ -17,12 +17,12 @@ export class FaqItemComponent implements OnInit {
   }
 
   handleClick(event): void {
-    event.preventDefault()
-    this.toggleShowAnswer()
+    event.preventDefault();
+    this.toggleShowAnswer();
   }
 
   toggleShowAnswer() {
-    this.showAnswer = !this.showAnswer
+    this.showAnswer = !this.showAnswer;
   }
 
 }

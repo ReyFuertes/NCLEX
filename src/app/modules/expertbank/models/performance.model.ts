@@ -1,13 +1,13 @@
 export interface PerformancePropertyModel {
-  title: string,
-  description: string,
-  imageUrlFront: string,
-  imageUrlBack: string
+  title: string;
+  description: string;
+  imageUrlFront: string;
+  imageUrlBack: string;
 }
 
 export interface PerformancePropertyFetchingModel {
-  title: boolean,
-  description: boolean,
-  imageUrlFront: string,
-  imageUrlBack: string
+  title: boolean;
+  description: boolean;
+  imageUrlFront: boolean;
+  imageUrlBack: boolean;
 }

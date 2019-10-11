@@ -1,16 +1,16 @@
 export interface TestimonialModel {
-  id: string
-  content: string,
-  avatarUrl: string,
-  fullName: string,
-  position: string,
-  company: string,
+  id: string;
+  content: string;
+  avatarUrl: string;
+  fullName: string;
+  position: string;
+  company: string;
 }
 
 export interface TestimonialPropertyModel {
-  title: string
+  title: string;
 }
 
 export interface TestimonialPropertyFetchingModel {
-  title: boolean
+  title: boolean;
 }

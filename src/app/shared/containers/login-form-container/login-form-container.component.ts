@@ -14,6 +14,6 @@ export class LoginFormContainerComponent implements OnInit {
   }
 
   handleLogin(credentials: LoginFormModel) {
-    console.log('@login client', credentials)
+    console.log('@login client', credentials);
   }
 }

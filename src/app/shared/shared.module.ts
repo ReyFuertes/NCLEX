@@ -19,7 +19,7 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { UniversityCarouselComponent } from './components/university-carousel/university-carousel.component';
@@ -49,13 +49,19 @@ import { InstitutionSectionContainerComponent } from './containers/institution-s
 import { ExpertbankSectionContainerComponent } from './containers/expertbank-section-container/expertbank-section-container.component';
 import { HeroSectionContainerComponent } from './containers/hero-section-container/hero-section-container.component';
 import { UniversitySectionContainerComponent } from './containers/university-section-container/university-section-container.component';
-import { AccreditationSectionContainerComponent } from './containers/accreditation-section-container/accreditation-section-container.component';
+import {
+  AccreditationSectionContainerComponent
+} from './containers/accreditation-section-container/accreditation-section-container.component';
 import { FigureSectionContainerComponent } from './containers/figure-section-container/figure-section-container.component';
 import { ElearningSectionContainerComponent } from './containers/elearning-section-container/elearning-section-container.component';
 import { NewsSectionContainerComponent } from './containers/news-section-container/news-section-container.component';
-import { RegistrationSectionContainerComponent } from './containers/registration-section-container/registration-section-container.component';
+import {
+  RegistrationSectionContainerComponent
+} from './containers/registration-section-container/registration-section-container.component';
 import { TestimonialSectionContainerComponent } from './containers/testimonial-section-container/testimonial-section-container.component';
-import { SubscriptionSectionContainerComponent } from './containers/subscription-section-container/subscription-section-container.component';
+import {
+  SubscriptionSectionContainerComponent
+} from './containers/subscription-section-container/subscription-section-container.component';
 import { PostMessageService } from '../services/post-message.service';
 import { LoginFormContainerComponent } from './containers/login-form-container/login-form-container.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -79,7 +85,7 @@ const materialModules = [
 
 const bootstrapModules = [
   NgbModule
-]
+];
 
 const components = [
   PageNotFoundComponent,
@@ -97,7 +103,7 @@ const components = [
   TestimonialSectionComponent,
   SubscriptionSectionComponent,
   LoginFormComponent
-]
+];
 
 const containers = [
   HeroSectionContainerComponent,
@@ -112,7 +118,7 @@ const containers = [
   TestimonialSectionContainerComponent,
   SubscriptionSectionContainerComponent,
   LoginFormContainerComponent
-]
+];
 
 @NgModule({
   declarations: [

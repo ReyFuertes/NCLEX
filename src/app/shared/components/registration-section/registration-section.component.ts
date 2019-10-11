@@ -7,12 +7,12 @@ import { RegistrationFormModel } from 'src/app/models/registration-form.model';
   styleUrls: ['./registration-section.component.scss']
 })
 export class RegistrationSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() subtitle: string
-  @Input() buttonText: string
-  @Output() onSubmitForm = new EventEmitter()
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() buttonText: string;
+  @Output() submitForm = new EventEmitter();
 
-  formData: RegistrationFormModel
+  formData: RegistrationFormModel;
 
   constructor() { }
 
@@ -20,9 +20,9 @@ export class RegistrationSectionComponent implements OnInit {
   }
 
   handleSubmit(event, name, email, institution, contactPerson, contactNumber) {
-    event.preventDefault()
-    this.formData = { name, email, institution, contactPerson, contactNumber }
-    this.onSubmitForm.emit(this.formData)
+    event.preventDefault();
+    this.formData = { name, email, institution, contactPerson, contactNumber };
+    this.submitForm.emit(this.formData);
   }
 
 }

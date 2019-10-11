@@ -2,13 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppReducer, metaReducers } from './store/reducers/app.reducer';
+import { metaReducers } from './store/reducers/app.reducer';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.component';
 import { AppComponent } from './app.component';
-import { AppEffects } from './store/effects/app.effect';
 import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -76,7 +75,6 @@ const materialModules = [];
 const primeNgModules = [];
 
 const rootReducers = {
-  app: AppReducer,
   university: UniversityReducer,
   hero: HeroReducer,
   institution: InstitutionReducer,
@@ -105,10 +103,9 @@ const rootReducers = {
   innovation: InnovationReducer,
   preparation: PreparationReducer,
   plan: PlanReducer
-}
+};
 
 const effects = [
-  AppEffects,
   UniversityEffects,
   HeroEffects,
   InstitutionEffects,
@@ -137,7 +134,7 @@ const effects = [
   InnovationEffects,
   PreparationEffects,
   PlanEffects
-]
+];
 
 @NgModule({
   declarations: [

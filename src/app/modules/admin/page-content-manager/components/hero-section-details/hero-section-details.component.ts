@@ -7,8 +7,8 @@ import { HeroModel } from 'src/app/models/hero.model';
   styleUrls: ['./hero-section-details.component.scss']
 })
 export class HeroSectionDetailsComponent implements OnInit {
-  @Input() hero: HeroModel
-  @Output() onChange = new EventEmitter()
+  @Input() hero: HeroModel;
+  @Output() inputChange = new EventEmitter();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class HeroSectionDetailsComponent implements OnInit {
   }
 
   handleInputChange(e) {
-    const { name, value } = e.target
-    this.onChange.emit({ [name]: value })
+    const { name, value } = e.target;
+    this.inputChange.emit({ [name]: value });
   }
 }

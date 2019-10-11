@@ -16,30 +16,30 @@ export enum TestimonialActionTypes {
 // list
 export const LoadTestimonialList = createAction(
   TestimonialActionTypes.LoadTestimonialList
-)
+);
 
 export const LoadTestimonialListSuccess = createAction(
   TestimonialActionTypes.LoadTestimonialListSuccess,
   props<{ list: TestimonialModel[] }>()
-)
+);
 
 export const LoadTestimonialListFailure = createAction(
   TestimonialActionTypes.LoadTestimonialListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadTestimonialProperty = createAction(
   TestimonialActionTypes.LoadTestimonialProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadTestimonialPropertySuccess = createAction(
   TestimonialActionTypes.LoadTestimonialPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadTestimonialPropertyFailure = createAction(
   TestimonialActionTypes.LoadTestimonialPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

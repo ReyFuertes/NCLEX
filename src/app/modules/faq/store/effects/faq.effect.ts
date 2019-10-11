@@ -21,11 +21,11 @@ export class FaqEffects {
             catchError(error =>
               of(LoadFaqListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

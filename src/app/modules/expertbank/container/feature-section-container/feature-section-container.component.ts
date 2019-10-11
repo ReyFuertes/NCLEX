@@ -10,29 +10,29 @@ import { LoadFeatureList, LoadFeatureProperty } from '../../store/actions/featur
   templateUrl: './feature-section-container.component.html',
 })
 export class FeatureSectionContainerComponent implements OnInit {
-  features: Observable<FeatureModel[]>
-  title: Observable<string>
+  features: Observable<FeatureModel[]>;
+  title: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.features = this.store.pipe(
       select(getFeatureList)
-    )
+    );
     this.title = this.store.pipe(
       select(getFeatureProperty, { property: 'title' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
+    this.getList();
+    this.getProperty('title');
   }
 
   getList() {
-    this.store.dispatch(LoadFeatureList())
+    this.store.dispatch(LoadFeatureList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadFeatureProperty({ property }))
+    this.store.dispatch(LoadFeatureProperty({ property }));
   }
 }
 

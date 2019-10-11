@@ -12,7 +12,9 @@ import { PreviewSectionComponent } from './components/preview-section/preview-se
 import { HeroSectionDetailsContainerComponent } from './container/hero-section-details-container/hero-section-details-container.component';
 import { UniversitySectionDetailsComponent } from './components/university-section-details/university-section-details.component';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
-import { UniversitySectionDetailsContainerComponent } from './container/university-section-details-container/university-section-details-container.component';
+import {
+  UniversitySectionDetailsContainerComponent
+} from './container/university-section-details-container/university-section-details-container.component';
 
 /**
  * Define your third party libs
@@ -36,12 +38,12 @@ const components = [
   HeroSectionDetailsComponent,
   UniversitySectionDetailsComponent,
   PageContentManagerContainerComponent
-]
+];
 
 const containers = [
   HeroSectionDetailsContainerComponent,
   UniversitySectionDetailsContainerComponent
-]
+];
 
 @NgModule({
   declarations: [

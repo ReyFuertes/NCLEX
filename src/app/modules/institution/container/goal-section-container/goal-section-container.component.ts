@@ -10,38 +10,38 @@ import { LoadGoalList, LoadGoalProperty } from '../../store/actions/goal.action'
   templateUrl: './goal-section-container.component.html',
 })
 export class GoalSectionContainerComponent implements OnInit {
-  goals: Observable<GoalModel[]>
-  title: Observable<string>
-  checkIconUrl: Observable<string>
-  avatarUrl: Observable<string>
+  goals: Observable<GoalModel[]>;
+  title: Observable<string>;
+  checkIconUrl: Observable<string>;
+  avatarUrl: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.goals = this.store.pipe(
       select(getGoalList)
-    )
+    );
     this.title = this.store.pipe(
       select(getGoalProperty, { property: 'title' })
-    )
+    );
     this.checkIconUrl = this.store.pipe(
       select(getGoalProperty, { property: 'checkIconUrl' })
-    )
+    );
     this.avatarUrl = this.store.pipe(
       select(getGoalProperty, { property: 'avatarUrl' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
-    this.getProperty('checkIconUrl')
-    this.getProperty('avatarUrl')
+    this.getList();
+    this.getProperty('title');
+    this.getProperty('checkIconUrl');
+    this.getProperty('avatarUrl');
   }
 
   getList() {
-    this.store.dispatch(LoadGoalList())
+    this.store.dispatch(LoadGoalList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadGoalProperty({ property }))
+    this.store.dispatch(LoadGoalProperty({ property }));
   }
 }

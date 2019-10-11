@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadAccreditationListSuccess, LoadAccreditationList, LoadAccreditationListFailure, LoadAccreditationPropertySuccess, LoadAccreditationPropertyFailure, LoadAccreditationProperty } from '../actions/accreditation.action';
+import { of } from 'rxjs';
 import { AccreditationService } from 'src/app/services/accreditation.service';
 import { AccreditationModel } from 'src/app/models/accreditation.model';
-import { of } from 'rxjs';
+import {
+  LoadAccreditationListSuccess,
+  LoadAccreditationList,
+  LoadAccreditationListFailure,
+  LoadAccreditationPropertySuccess,
+  LoadAccreditationPropertyFailure,
+  LoadAccreditationProperty
+} from '../actions/accreditation.action';
 
 @Injectable()
 export class AccreditationEffects {
@@ -21,11 +28,11 @@ export class AccreditationEffects {
             catchError(error =>
               of(LoadAccreditationListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadAccreditationProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class AccreditationEffects {
             catchError(propertyError =>
               of(LoadAccreditationPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

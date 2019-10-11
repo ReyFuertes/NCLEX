@@ -6,9 +6,9 @@ import { LoadInfoProperty, LoadInfoPropertySuccess, LoadInfoPropertyFailure } fr
 
 export interface InfoState {
   // property
-  properties: InfoPropertyModel,
-  propertiesFetching: InfoPropertyFetchingModel,
-  propertiesError: InfoPropertyModel
+  properties: InfoPropertyModel;
+  propertiesFetching: InfoPropertyFetchingModel;
+  propertiesError: InfoPropertyModel;
 }
 
 const initialState: InfoState = {
@@ -30,7 +30,7 @@ const initialState: InfoState = {
   }
 };
 
-const _infoReducer = createReducer(
+const infoReducer = createReducer(
   initialState,
 
   // property
@@ -74,10 +74,10 @@ const _infoReducer = createReducer(
       }
     })
   )
-)
+);
 
 export function InfoReducer(state, action) {
-  return _infoReducer(state, action)
+  return infoReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

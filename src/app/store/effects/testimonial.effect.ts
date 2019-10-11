@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { LoadTestimonialListSuccess, LoadTestimonialList, LoadTestimonialListFailure, LoadTestimonialPropertySuccess, LoadTestimonialPropertyFailure, LoadTestimonialProperty } from '../actions/testimonial.action';
+import { of } from 'rxjs';
 import { TestimonialService } from 'src/app/services/testimonial.service';
 import { TestimonialModel } from 'src/app/models/testimonial.model';
-import { of } from 'rxjs';
+import {
+  LoadTestimonialListSuccess,
+  LoadTestimonialList,
+  LoadTestimonialListFailure,
+  LoadTestimonialPropertySuccess,
+  LoadTestimonialPropertyFailure,
+  LoadTestimonialProperty
+} from '../actions/testimonial.action';
 
 @Injectable()
 export class TestimonialEffects {
@@ -21,11 +28,11 @@ export class TestimonialEffects {
             catchError(error =>
               of(LoadTestimonialListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadTestimonialProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class TestimonialEffects {
             catchError(propertyError =>
               of(LoadTestimonialPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

@@ -1,16 +1,16 @@
 export interface ImprovementModel {
-  id: string,
-  title: string,
-  description: string,
-  imageUrl: string
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
 }
 
 export interface ImprovementPropertyModel {
-  title: string,
-  subtitle: string,
+  title: string;
+  subtitle: string;
 }
 
 export interface ImprovementPropertyFetchingModel {
-  title: boolean,
-  subtitle: boolean,
+  title: boolean;
+  subtitle: boolean;
 }

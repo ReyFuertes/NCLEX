@@ -16,30 +16,30 @@ export enum RegistrationActionTypes {
 export const LoadRegistrationProperty = createAction(
   RegistrationActionTypes.LoadRegistrationProperty,
   props<{ property: string, page: string }>()
-)
+);
 
 export const LoadRegistrationPropertySuccess = createAction(
   RegistrationActionTypes.LoadRegistrationPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadRegistrationPropertyFailure = createAction(
   RegistrationActionTypes.LoadRegistrationPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);
 
 // form
 export const SubmitRegistrationForm = createAction(
   RegistrationActionTypes.SubmitRegistrationForm,
   props<{ formData: RegistrationFormModel }>()
-)
+);
 
 export const SubmitRegistrationFormSuccess = createAction(
   RegistrationActionTypes.SubmitRegistrationFormSuccess,
   props<{ formResponse: any }>()
-)
+);
 
 export const SubmitRegistrationFormFailure = createAction(
   RegistrationActionTypes.SubmitRegistrationFormFailure,
   props<{ formError: any }>()
-)
+);

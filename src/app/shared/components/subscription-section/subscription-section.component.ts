@@ -7,10 +7,10 @@ import { SubscriptionFormModel } from 'src/app/models/subscription-form.model';
   styleUrls: ['./subscription-section.component.scss']
 })
 export class SubscriptionSectionComponent implements OnInit {
-  @Input() title: string
-  @Output() onSubmitForm = new EventEmitter()
+  @Input() title: string;
+  @Output() submitForm = new EventEmitter();
 
-  formData: SubscriptionFormModel
+  formData: SubscriptionFormModel;
 
   constructor() { }
 
@@ -18,8 +18,8 @@ export class SubscriptionSectionComponent implements OnInit {
   }
 
   handleSubmit(event, email) {
-    event.preventDefault()
-    this.formData = { email }
-    this.onSubmitForm.emit(this.formData)
+    event.preventDefault();
+    this.formData = { email };
+    this.submitForm.emit(this.formData);
   }
 }

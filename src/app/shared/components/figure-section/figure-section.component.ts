@@ -7,7 +7,7 @@ import { FigureModel } from 'src/app/models/figure.model';
   styleUrls: ['./figure-section.component.scss']
 })
 export class FigureSectionComponent implements OnInit {
-  @Input() figures: FigureModel[]
+  @Input() figures: FigureModel[];
 
   constructor() { }
 

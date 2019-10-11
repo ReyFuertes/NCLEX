@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { FeatureModel, FeaturePropertyModel, FeaturePropertyFetchingModel } from '../../models/feature.model';
-import { LoadFeatureList, LoadFeatureListSuccess, LoadFeatureListFailure, LoadFeatureProperty, LoadFeaturePropertySuccess, LoadFeaturePropertyFailure } from '../actions/feature.action';
+import {
+  LoadFeatureList,
+  LoadFeatureListSuccess,
+  LoadFeatureListFailure,
+  LoadFeatureProperty,
+  LoadFeaturePropertySuccess,
+  LoadFeaturePropertyFailure
+} from '../actions/feature.action';
 
 export interface FeatureState {
   // list
-  list: FeatureModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: FeatureModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: FeaturePropertyModel,
-  propertiesFetching: FeaturePropertyFetchingModel,
-  propertiesError: FeaturePropertyModel
+  properties: FeaturePropertyModel;
+  propertiesFetching: FeaturePropertyFetchingModel;
+  propertiesError: FeaturePropertyModel;
 }
 
 const initialState: FeatureState = {
@@ -34,7 +41,7 @@ const initialState: FeatureState = {
   }
 };
 
-const _featureReducer = createReducer(
+const featureReducer = createReducer(
   initialState,
 
   // list
@@ -94,10 +101,10 @@ const _featureReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function FeatureReducer(state, action) {
-  return _featureReducer(state, action)
+  return featureReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

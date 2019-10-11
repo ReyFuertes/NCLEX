@@ -48,7 +48,7 @@ export class SidebarSectionListComponent implements OnInit {
       id: '10',
       name: 'Newsletter Section'
     }
-  ]
+  ];
 
   constructor() { }
 

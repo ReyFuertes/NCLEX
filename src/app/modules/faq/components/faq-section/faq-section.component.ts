@@ -7,7 +7,7 @@ import { FaqModel, FaqGroupedByCategoryModel } from '../../models/faq.model';
   styleUrls: ['./faq-section.component.scss']
 })
 export class FaqSectionComponent implements OnInit {
-  @Input() faqsGroupedByCategory: FaqGroupedByCategoryModel
+  @Input() faqsGroupedByCategory: FaqGroupedByCategoryModel;
 
   constructor() { }
 

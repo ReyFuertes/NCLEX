@@ -6,8 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./practice-section.component.scss']
 })
 export class PracticeSectionComponent implements OnInit {
-  @Input() title: string
-  @Output() onClickPractice = new EventEmitter()
+  @Input() title: string;
+  @Output() clickPractice = new EventEmitter();
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class PracticeSectionComponent implements OnInit {
   }
 
   handleClick(event): void {
-    this.onClickPractice.emit(event)
+    this.clickPractice.emit(event);
   }
 
 }

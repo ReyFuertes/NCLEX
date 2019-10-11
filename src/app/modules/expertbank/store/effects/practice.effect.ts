@@ -3,7 +3,11 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { PracticeService } from '../../services/practice.service';
-import { LoadPracticePropertySuccess, LoadPracticePropertyFailure, LoadPracticeProperty } from '../actions/practice.action';
+import {
+  LoadPracticePropertySuccess,
+  LoadPracticePropertyFailure,
+  LoadPracticeProperty
+} from '../actions/practice.action';
 
 @Injectable()
 export class PracticeEffects {
@@ -20,11 +24,11 @@ export class PracticeEffects {
             catchError(propertyError =>
               of(LoadPracticePropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

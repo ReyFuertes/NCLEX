@@ -1,7 +1,7 @@
 export interface PracticePropertyModel {
-  title: string,
+  title: string;
 }
 
 export interface PracticePropertyFetchingModel {
-  title: boolean,
+  title: boolean;
 }

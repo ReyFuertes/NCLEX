@@ -7,8 +7,8 @@ import { AdvantageModel } from '../../models/advantage.model';
   styleUrls: ['./advantages-section.component.scss']
 })
 export class AdvantagesSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() advantages: AdvantageModel[]
+  @Input() title: string;
+  @Input() advantages: AdvantageModel[];
 
   constructor() { }
 

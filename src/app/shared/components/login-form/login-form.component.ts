@@ -7,12 +7,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  @Output() onLogin = new EventEmitter()
-  loginForm: FormGroup
+  @Output() login = new EventEmitter();
+  loginForm: FormGroup;
   loading = false;
   submitted = false;
   error = '';
-  form: any
+  form: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   get f() {
-    return this.loginForm.controls
+    return this.loginForm.controls;
   }
 
   onSubmit() {
@@ -36,10 +36,10 @@ export class LoginFormComponent implements OnInit {
       return;
     }
 
-    this.onLogin.emit({
+    this.login.emit({
       username: this.f.username.value,
       password: this.f.password.value
-    })
+    });
   }
 }
 

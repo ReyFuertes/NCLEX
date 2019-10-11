@@ -10,15 +10,15 @@ import { UniversityModel } from 'src/app/models/university.model';
   templateUrl: './university-section-container.component.html',
 })
 export class UniversitySectionContainerComponent implements OnInit {
-  universities: Observable<UniversityModel[]>
+  universities: Observable<UniversityModel[]>;
 
   constructor(private store: Store<any>) {
     this.universities = this.store.pipe(
       select(getUniversityList)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadUniversityList())
+    this.store.dispatch(LoadUniversityList());
   }
 }

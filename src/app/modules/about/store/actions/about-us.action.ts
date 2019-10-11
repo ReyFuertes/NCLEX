@@ -9,14 +9,14 @@ export enum AboutUsActionTypes {
 
 export const LoadAboutUsList = createAction(
   AboutUsActionTypes.LoadAboutUsList
-)
+);
 
 export const LoadAboutUsListSuccess = createAction(
   AboutUsActionTypes.LoadAboutUsListSuccess,
   props<{ list: AboutUsModel[] }>()
-)
+);
 
 export const LoadAboutUsListFailure = createAction(
   AboutUsActionTypes.LoadAboutUsListFailure,
   props<{ error: any }>()
-)
+);

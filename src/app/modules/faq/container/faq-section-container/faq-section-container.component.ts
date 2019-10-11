@@ -10,19 +10,19 @@ import { LoadFaqList } from '../../store/actions/faq.action';
   templateUrl: './faq-section-container.component.html',
 })
 export class FaqSectionContainerComponent implements OnInit {
-  faqsGroupedByCategory: Observable<FaqModel[]>
+  faqsGroupedByCategory: Observable<FaqModel[]>;
 
   constructor(private store: Store<any>) {
     this.faqsGroupedByCategory = this.store.pipe(
       select(getFaqGroupedByProperty, { property: 'category' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
+    this.getList();
   }
 
   getList() {
-    this.store.dispatch(LoadFaqList())
+    this.store.dispatch(LoadFaqList());
   }
 }

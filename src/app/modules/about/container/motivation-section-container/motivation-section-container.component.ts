@@ -10,15 +10,15 @@ import { LoadMotivationList } from '../../store/actions/motivation.action';
   templateUrl: './motivation-section-container.component.html'
 })
 export class MotivationSectionContainerComponent implements OnInit {
-  motivations: Observable<MotivationModel[]>
+  motivations: Observable<MotivationModel[]>;
 
   constructor(private store: Store<any>) {
     this.motivations = this.store.pipe(
       select(getMotivationList)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadMotivationList())
+    this.store.dispatch(LoadMotivationList());
   }
 }

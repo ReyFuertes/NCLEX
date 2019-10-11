@@ -10,33 +10,33 @@ import { LoadBenefitList, LoadBenefitProperty } from '../../store/actions/benefi
   templateUrl: './benefit-section-container.component.html',
 })
 export class BenefitSectionContainerComponent implements OnInit  {
-  benefits: Observable<BenefitModel[]>
-  title: Observable<string>
-  checkIconUrl: Observable<string>
+  benefits: Observable<BenefitModel[]>;
+  title: Observable<string>;
+  checkIconUrl: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.benefits = this.store.pipe(
       select(getBenefitList)
-    )
+    );
     this.title = this.store.pipe(
       select(getBenefitProperty, { property: 'title' })
-    )
+    );
     this.checkIconUrl = this.store.pipe(
       select(getBenefitProperty, { property: 'checkIconUrl' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getList()
-    this.getProperty('title')
-    this.getProperty('checkIconUrl')
+    this.getList();
+    this.getProperty('title');
+    this.getProperty('checkIconUrl');
   }
 
   getList() {
-    this.store.dispatch(LoadBenefitList())
+    this.store.dispatch(LoadBenefitList());
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadBenefitProperty({ property }))
+    this.store.dispatch(LoadBenefitProperty({ property }));
   }
 }

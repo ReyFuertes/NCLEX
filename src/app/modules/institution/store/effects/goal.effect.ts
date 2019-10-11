@@ -4,7 +4,14 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { GoalModel } from '../../models/goal.model';
 import { GoalService } from '../../services/goal.service';
-import { LoadGoalListSuccess, LoadGoalList, LoadGoalListFailure, LoadGoalPropertySuccess, LoadGoalPropertyFailure, LoadGoalProperty } from '../actions/goal.action';
+import {
+  LoadGoalListSuccess,
+  LoadGoalList,
+  LoadGoalListFailure,
+  LoadGoalPropertySuccess,
+  LoadGoalPropertyFailure,
+  LoadGoalProperty
+} from '../actions/goal.action';
 
 @Injectable()
 export class GoalEffects {
@@ -21,11 +28,11 @@ export class GoalEffects {
             catchError(error =>
               of(LoadGoalListFailure({ error }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   // property
   loadGoalProperty$ = createEffect(
@@ -40,11 +47,11 @@ export class GoalEffects {
             catchError(propertyError =>
               of(LoadGoalPropertyFailure({ property, propertyError }))
             )
-          )
+          );
         }
       )
     )
-  )
+  );
 
   constructor(
     private actions$: Actions,

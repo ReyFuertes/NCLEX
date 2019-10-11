@@ -6,9 +6,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./university-section-details.component.scss']
 })
 export class UniversitySectionDetailsComponent implements OnInit {
-  @Input() name: string
-  @Output() onChange = new EventEmitter()
-  title = ''
+  @Input() name: string;
+  @Output() inputChange = new EventEmitter();
+  title = '';
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class UniversitySectionDetailsComponent implements OnInit {
   }
 
   handleInputChange(e) {
-    const { name, value } = e.target
-    this.onChange.emit({ [name]: value })
+    const { name, value } = e.target;
+    this.inputChange.emit({ [name]: value });
   }
 }

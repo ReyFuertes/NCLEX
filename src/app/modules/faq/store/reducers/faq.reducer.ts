@@ -6,9 +6,9 @@ import { LoadFaqList, LoadFaqListSuccess, LoadFaqListFailure } from '../actions/
 
 export interface FaqState {
   // list
-  list: FaqModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: FaqModel[];
+  isFetchingList: boolean;
+  error: any;
 }
 
 const initialState: FaqState = {
@@ -18,7 +18,7 @@ const initialState: FaqState = {
   error: null,
 };
 
-const _faqReducer = createReducer(
+const faqReducer = createReducer(
   initialState,
 
   // list
@@ -36,10 +36,10 @@ const _faqReducer = createReducer(
     LoadFaqListFailure,
     (state, action) => ({ ...state, isFetchingList: false, error: action.error })
   )
-)
+);
 
 export function FaqReducer(state, action) {
-  return _faqReducer(state, action)
+  return faqReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

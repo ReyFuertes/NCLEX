@@ -2,18 +2,25 @@ import { MetaReducer, createReducer, on } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { environment } from 'src/environments/environment';
 import { ImprovementModel, ImprovementPropertyModel, ImprovementPropertyFetchingModel } from '../../models/improvement.model';
-import { LoadImprovementList, LoadImprovementListSuccess, LoadImprovementListFailure, LoadImprovementProperty, LoadImprovementPropertySuccess, LoadImprovementPropertyFailure } from '../actions/improvement.action';
+import {
+  LoadImprovementList,
+  LoadImprovementListSuccess,
+  LoadImprovementListFailure,
+  LoadImprovementProperty,
+  LoadImprovementPropertySuccess,
+  LoadImprovementPropertyFailure
+} from '../actions/improvement.action';
 
 export interface ImprovementState {
   // list
-  list: ImprovementModel[],
-  isFetchingList: boolean,
-  error: any,
+  list: ImprovementModel[];
+  isFetchingList: boolean;
+  error: any;
 
   // property
-  properties: ImprovementPropertyModel,
-  propertiesFetching: ImprovementPropertyFetchingModel,
-  propertiesError: ImprovementPropertyModel
+  properties: ImprovementPropertyModel;
+  propertiesFetching: ImprovementPropertyFetchingModel;
+  propertiesError: ImprovementPropertyModel;
 }
 
 const initialState: ImprovementState = {
@@ -37,7 +44,7 @@ const initialState: ImprovementState = {
   }
 };
 
-const _improvementReducer = createReducer(
+const improvementReducer = createReducer(
   initialState,
 
   // list
@@ -97,10 +104,10 @@ const _improvementReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function ImprovementReducer(state, action) {
-  return _improvementReducer(state, action)
+  return improvementReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

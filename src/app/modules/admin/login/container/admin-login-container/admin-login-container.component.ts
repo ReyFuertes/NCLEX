@@ -19,19 +19,19 @@ export class AdminLoginContainerComponent implements OnInit {
 
   ngOnInit() {
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin/dashboard';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/admin/dashboard';
 
     if (this.authService$.loggedInUser) {
-      this.navigateToPage()
+      this.navigateToPage();
     }
   }
 
   navigateToPage() {
-    this.router.navigate([this.returnUrl])
+    this.router.navigate([this.returnUrl]);
   }
 
   handleLogin(credentials: LoginFormModel) {
-    this.authService$.login(credentials)
-    this.navigateToPage()
+    this.authService$.login(credentials);
+    this.navigateToPage();
   }
 }

@@ -10,15 +10,15 @@ import { LoadAboutUsList } from '../../store/actions/about-us.action';
   templateUrl: './about-us-section-container.component.html'
 })
 export class AboutUsSectionContainerComponent implements OnInit {
-  aboutUsList: Observable<AboutUsModel[]>
+  aboutUsList: Observable<AboutUsModel[]>;
 
   constructor(private store: Store<any>) {
     this.aboutUsList = this.store.pipe(
       select(getAboutUsList)
-    )
+    );
   }
 
   ngOnInit() {
-    this.store.dispatch(LoadAboutUsList())
+    this.store.dispatch(LoadAboutUsList());
   }
 }

@@ -7,8 +7,8 @@ import { AccreditationModel } from 'src/app/models/accreditation.model';
   styleUrls: ['./accreditation-section.component.scss']
 })
 export class AccreditationSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() accreditations: AccreditationModel[]
+  @Input() title: string;
+  @Input() accreditations: AccreditationModel[];
 
   constructor() { }
 

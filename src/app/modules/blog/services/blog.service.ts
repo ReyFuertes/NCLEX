@@ -7,16 +7,16 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class BlogService extends BaseService {
-  private url = '/assets/data/blogs.json'
+  private url = '/assets/data/blogs.json';
 
   getBlogs() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }

@@ -7,10 +7,10 @@ import { InnovationModel } from '../../models/innovation.model';
   styleUrls: ['./innovation-section.component.scss']
 })
 export class InnovationSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() subtitle: string
-  @Input() imageUrl: string
-  @Input() innovations: InnovationModel[]
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() imageUrl: string;
+  @Input() innovations: InnovationModel[];
 
   constructor() { }
 

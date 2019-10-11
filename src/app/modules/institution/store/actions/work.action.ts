@@ -16,30 +16,30 @@ export enum WorkActionTypes {
 // list
 export const LoadWorkList = createAction(
   WorkActionTypes.LoadWorkList
-)
+);
 
 export const LoadWorkListSuccess = createAction(
   WorkActionTypes.LoadWorkListSuccess,
   props<{ list: WorkModel[] }>()
-)
+);
 
 export const LoadWorkListFailure = createAction(
   WorkActionTypes.LoadWorkListFailure,
   props<{ error: any }>()
-)
+);
 
 // property
 export const LoadWorkProperty = createAction(
   WorkActionTypes.LoadWorkProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadWorkPropertySuccess = createAction(
   WorkActionTypes.LoadWorkPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadWorkPropertyFailure = createAction(
   WorkActionTypes.LoadWorkPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);

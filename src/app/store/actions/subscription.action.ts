@@ -16,30 +16,30 @@ export enum SubscriptionActionTypes {
 export const LoadSubscriptionProperty = createAction(
   SubscriptionActionTypes.LoadSubscriptionProperty,
   props<{ property: string }>()
-)
+);
 
 export const LoadSubscriptionPropertySuccess = createAction(
   SubscriptionActionTypes.LoadSubscriptionPropertySuccess,
   props<{ property: string, propertyValue: string }>()
-)
+);
 
 export const LoadSubscriptionPropertyFailure = createAction(
   SubscriptionActionTypes.LoadSubscriptionPropertyFailure,
   props<{ property: string, propertyError: any }>()
-)
+);
 
 // form
 export const SubmitSubscriptionForm = createAction(
   SubscriptionActionTypes.SubmitSubscriptionForm,
   props<{ formData: SubscriptionFormModel }>()
-)
+);
 
 export const SubmitSubscriptionFormSuccess = createAction(
   SubscriptionActionTypes.SubmitSubscriptionFormSuccess,
   props<{ formResponse: any }>()
-)
+);
 
 export const SubmitSubscriptionFormFailure = createAction(
   SubscriptionActionTypes.SubmitSubscriptionFormFailure,
   props<{ formError: any }>()
-)
+);

@@ -11,20 +11,20 @@ export class PostMessageService {
   }
 
   sendMessage(messageAction: any) {
-    const iframeElement: HTMLFrameElement = document.getElementById('iframe-nclex') as HTMLFrameElement
-    const iframeWindow = iframeElement ? iframeElement.contentWindow : null
+    const iframeElement: HTMLFrameElement = document.getElementById('iframe-nclex') as HTMLFrameElement;
+    const iframeWindow = iframeElement ? iframeElement.contentWindow : null; // tslint:disable-line
     if (iframeWindow) {
       iframeWindow.postMessage({
         messageSecret: environment.messageSecret,
         action: messageAction
-      }, window.origin)
+      }, window.origin);
     }
   }
 
   observableSendMessage(messageAction: any) {
     return new Observable((subscriber) => {
-      this.sendMessage(messageAction)
-      subscriber.next(messageAction)
+      this.sendMessage(messageAction);
+      subscriber.next(messageAction);
     });
   }
 }

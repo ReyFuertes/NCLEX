@@ -6,11 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./plan-section.component.scss']
 })
 export class PlanSectionComponent implements OnInit {
-  @Input() title
-  @Input() subtitle
-  @Input() checkImageUrl
-  @Input() buttonText
-  @Input() plans
+  @Input() title;
+  @Input() subtitle;
+  @Input() checkImageUrl;
+  @Input() buttonText;
+  @Input() plans;
 
   constructor() { }
 

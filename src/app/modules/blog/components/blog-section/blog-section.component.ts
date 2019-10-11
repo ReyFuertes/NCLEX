@@ -7,11 +7,11 @@ import { BlogModel, PaginateBlogModel } from '../../models/blog.model';
   styleUrls: ['./blog-section.component.scss']
 })
 export class BlogSectionComponent implements OnInit, OnChanges {
-  @Input() blogs: BlogModel[]
-  @Input() pagination: PaginateBlogModel
-  @Output() onPaginate = new EventEmitter()
+  @Input() blogs: BlogModel[];
+  @Input() pagination: PaginateBlogModel;
+  @Output() paginate = new EventEmitter();
 
-  pagination$: PaginateBlogModel
+  pagination$: PaginateBlogModel;
 
   constructor() { }
 
@@ -20,12 +20,12 @@ export class BlogSectionComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes) {
     if (changes.pagination) {
-      this.pagination$ = {...changes.pagination.currentValue}
+      this.pagination$ = {...changes.pagination.currentValue};
     }
   }
 
   handlePaginate(data: PaginateBlogModel) {
-    this.onPaginate.emit(data)
+    this.paginate.emit(data);
   }
 
 }

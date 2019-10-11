@@ -6,9 +6,9 @@ import { LoadPracticeProperty, LoadPracticePropertySuccess, LoadPracticeProperty
 
 export interface PracticeState {
   // property
-  properties: PracticePropertyModel,
-  propertiesFetching: PracticePropertyFetchingModel,
-  propertiesError: PracticePropertyModel
+  properties: PracticePropertyModel;
+  propertiesFetching: PracticePropertyFetchingModel;
+  propertiesError: PracticePropertyModel;
 }
 
 const initialState: PracticeState = {
@@ -24,7 +24,7 @@ const initialState: PracticeState = {
   }
 };
 
-const _practiceReducer = createReducer(
+const practiceReducer = createReducer(
   initialState,
 
   // property
@@ -68,10 +68,10 @@ const _practiceReducer = createReducer(
       }
     })
   ),
-)
+);
 
 export function PracticeReducer(state, action) {
-  return _practiceReducer(state, action)
+  return practiceReducer(state, action);
 }
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];

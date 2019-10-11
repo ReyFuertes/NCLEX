@@ -1,14 +1,14 @@
 export interface FeatureModel {
-  id: string,
-  title: string,
-  description: string,
-  imageUrl: string
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
 }
 
 export interface FeaturePropertyModel {
-  title: string
+  title: string;
 }
 
 export interface FeaturePropertyFetchingModel {
-  title: boolean
+  title: boolean;
 }

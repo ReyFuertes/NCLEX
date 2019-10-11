@@ -9,34 +9,34 @@ import { LoadPerformanceProperty } from '../../store/actions/performance.action'
   templateUrl: './performance-section-container.component.html',
 })
 export class PerformanceSectionContainerComponent implements OnInit {
-  title: Observable<string>
-  imageUrlFront: Observable<string>
-  imageUrlBack: Observable<string>
-  description: Observable<string>
+  title: Observable<string>;
+  imageUrlFront: Observable<string>;
+  imageUrlBack: Observable<string>;
+  description: Observable<string>;
 
   constructor(private store: Store<any>) {
     this.title = this.store.pipe(
       select(getPerformanceProperty, { property: 'title' })
-    )
+    );
     this.imageUrlFront = this.store.pipe(
       select(getPerformanceProperty, { property: 'imageUrlFront' })
-    )
+    );
     this.imageUrlBack = this.store.pipe(
       select(getPerformanceProperty, { property: 'imageUrlBack' })
-    )
+    );
     this.description = this.store.pipe(
       select(getPerformanceProperty, { property: 'description' })
-    )
+    );
   }
 
   ngOnInit() {
-    this.getProperty('title')
-    this.getProperty('imageUrlFront')
-    this.getProperty('imageUrlBack')
-    this.getProperty('description')
+    this.getProperty('title');
+    this.getProperty('imageUrlFront');
+    this.getProperty('imageUrlBack');
+    this.getProperty('description');
   }
 
   getProperty(property: string) {
-    this.store.dispatch(LoadPerformanceProperty({ property }))
+    this.store.dispatch(LoadPerformanceProperty({ property }));
   }
 }

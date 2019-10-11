@@ -7,12 +7,12 @@ import { QuestionFormModel } from '../../models/question.model';
   styleUrls: ['./question-section.component.scss']
 })
 export class QuestionSectionComponent implements OnInit {
-  @Input() title: string
-  @Input() subtitle: string
-  @Input() buttonText: string = "Submit"
-  @Output() onSubmitForm = new EventEmitter()
+  @Input() title: string;
+  @Input() subtitle: string;
+  @Input() buttonText = 'Submit';
+  @Output() submitForm = new EventEmitter();
 
-  formData: QuestionFormModel
+  formData: QuestionFormModel;
 
   constructor() { }
 
@@ -20,9 +20,9 @@ export class QuestionSectionComponent implements OnInit {
   }
 
   handleSubmit(event, inquiryType, position, firstName, lastName, email, institution, question) {
-    event.preventDefault()
-    this.formData = { inquiryType, position, firstName, lastName, email, institution, question }
-    this.onSubmitForm.emit(this.formData)
+    event.preventDefault();
+    this.formData = { inquiryType, position, firstName, lastName, email, institution, question };
+    this.submitForm.emit(this.formData);
   }
 
 }

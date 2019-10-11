@@ -1,14 +1,14 @@
 export interface BenefitModel {
-  id: string,
-  description: string
+  id: string;
+  description: string;
 }
 
 export interface BenefitPropertyModel {
-  title: string,
-  checkIconUrl: string
+  title: string;
+  checkIconUrl: string;
 }
 
 export interface BenefitPropertyFetchingModel {
-  title: boolean,
-  checkIconUrl: boolean
+  title: boolean;
+  checkIconUrl: boolean;
 }

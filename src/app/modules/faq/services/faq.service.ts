@@ -7,17 +7,17 @@ import { BaseService } from 'src/app/services/base.service';
   providedIn: 'root'
 })
 export class FaqService extends BaseService {
-  private url = '/assets/data/faqs.json'
+  private url = '/assets/data/faqs.json';
 
   getFaqs() {
     return this.get(this.url)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 
-  constructor(private _http: HttpClient) {
-    super(_http)
+  constructor(private http$: HttpClient) {
+    super(http$);
   }
 }
 
